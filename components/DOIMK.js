@@ -94,7 +94,7 @@ export default class Cap_nhat_Infomation extends Component {
                 <View style={styles.column_information}>
                     <View style={styles.view_image}>
                         <Text style={styles.tieu_de_about}> Cập nhật mật khẩu</Text>
-                        <Image style={styles.image} resizeMode='contain' source={require('./../images/amvi.jpg')}></Image>
+                        <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/amvi.png"}}></Image>
                     </View>
 
                     <View style={styles.container5}>

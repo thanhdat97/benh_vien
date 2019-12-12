@@ -25,7 +25,7 @@ class FlatListItem extends Component {
                 <View style={{
                     flex: 1, flexDirection: "row", backgroundColor: this.props.index % 2 == 0 ? "#fff" : "#fff"
                 }}>
-                     <Image style={styles.image_ql} resizeMode='contain' source={require('./../../images/calendar.png')}></Image>
+                     <Image style={styles.image_ql} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/calendar.png"}}></Image>
                     <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5} style={styles.content}>
                         <View style={{ flex: 1, flexDirection: "column", justifyContent: 'center', paddingBottom: 5, paddingTop: 5, }}>
                             <Text style={styles.itemText}>Ngày khám: {dateformat(this.props.item.ngayKham,"dd/mm/yyyy")}</Text>

@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
         flex:1
     },
     container_table: { flex: 1,width:width,marginBottom:20, backgroundColor: '#fff' },
+    container_table2: { flex: 1,width:width, backgroundColor: '#fff' },
 
     container2: {
         flex: 1,
@@ -56,6 +57,11 @@ const styles = StyleSheet.create({
         textAlign: "center",
         width: "100%",
         paddingBottom: 20,
+    },
+    text_87712: {
+        fontSize: 18,
+        width: "100%",
+        padding:"5%"
     },
     text_875: {
         width: "100%",
@@ -192,11 +198,34 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#fff",
     },
+    linearGradient_32756: {
+        borderRadius: 5,
+        marginTop: 10,
+        marginBottom: 10,
+        width: "100%",
+        padding: 8,
+        textAlign: "center",
+    },
+    linear2:{
+        marginLeft:5
+    },  
+    linear3:{
+        marginLeft:5,
+        marginRight:10,
+    },  
     linearGradient_327567: {
         borderRadius: 5,
         marginTop: 10,
         marginBottom: 10,
-        width: "50%",
+        width:width/2,
+        padding: 8,
+        textAlign: "center",
+    },
+    linearGradient_32756732: {
+        borderRadius: 5,
+        marginTop: 10,
+        marginBottom: 10,
+        width:(width-50)/2,
         padding: 8,
         textAlign: "center",
     },
@@ -216,6 +245,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         flex: 2,
     },
+    
     button: {
         height: 46,
         borderRadius: 5,
@@ -229,6 +259,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    text2:{textAlign:'center',color: 'white'},
     text: {textAlign:'center'},
     tieu_de_footer: {
         fontSize: 18,
@@ -237,6 +268,15 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: "bold",
         flex: 1,
+    },
+    modal: {
+        borderRadius: Platform.OS === 'ios' ? 20 : 6,
+        shadowRadius: 10,
+        width: width,
+        height: 'auto',
+        paddingBottom: 15,
+        paddingLeft: 10,
+        paddingRight: 10,
     },
 });
 module.exports = styles;

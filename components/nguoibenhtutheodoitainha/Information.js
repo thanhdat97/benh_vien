@@ -15,19 +15,22 @@ export default class INFORAMTION extends Component {
 
     }
     XL_Chon() {
-        this.props.navigation.navigate("Man_hinh_TTTC")
+        this.props.navigation.navigate("Man_hinh_Mach")
     }
     XL_Chon2() {
-        this.props.navigation.navigate("Man_hinh_SKCN")
+        this.props.navigation.navigate("Man_hinh_Huyetap")
     }
     XL_Chon3() {
-        this.props.navigation.navigate("Man_hinh_SKGD")
+        this.props.navigation.navigate("Man_hinh_Nhietdo")
     }
     XL_Chon4() {
-        this.props.navigation.navigate("Man_hinh_SKSS")
+        this.props.navigation.navigate("Man_hinh_Duongmau")
     }
     XL_Chon5() {
-        this.props.navigation.navigate("Man_hinh_SKK")
+        this.props.navigation.navigate("Man_hinh_Hba1c")
+    }
+    XL_Chon6() {
+        this.props.navigation.navigate("Man_hinh_ACT")
     }
     render() {
 
@@ -38,33 +41,39 @@ export default class INFORAMTION extends Component {
                     <View style={styles.column_875}>
                         <ScrollView>
                             <TouchableOpacity onPress={this.XL_Chon.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_hanh_chinh.png"}}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/mach.png"}}></Image>
                                 <Text style={styles.text_87121}>
-                                    Thông tin hành chính
+                                    Mạch
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoecanhan.png"}}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/huyetap.png"}}></Image>
                                 <Text style={styles.text_8712}>
-                                    Thông tin sức khỏe cá nhân
+                                    Huyết áp
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon3.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoegiadinh.png"}}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/nhietdo.png"}}></Image>
                                 <Text style={styles.text_8712}>
-                                   Thông tin sức khỏe gia đình
+                                   Nhiệt độ
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon4.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoesinhsan.png"}}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/duongmau.png"}}></Image>
                                 <Text style={styles.text_8712}>
-                                    Thông tin sức khỏe sinh sản
+                                    Đường máu
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon5.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/hososuckhoe.png"}}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/hba1c.png"}}></Image>
                                 <Text style={styles.text_8712}>
-                                    Thông tin khác
+                                    Hba1C
+                             </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.XL_Chon6.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/act.png"}}></Image>
+                                <Text style={styles.text_8712}>
+                                    Test ACT
                              </Text>
                             </TouchableOpacity>
                         </ScrollView>

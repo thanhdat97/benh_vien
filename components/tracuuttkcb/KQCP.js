@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, Dimensions } from 'react-native';
-import styles from "./../css";
-import Heading from './../../Header'
-import { ScrollView } from 'react-native-gesture-handler';
+
 import { WebView } from 'react-native-webview';
 
 var dateformat = require('dateformat')

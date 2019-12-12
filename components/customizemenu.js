@@ -30,7 +30,7 @@ export default class Main extends Component {
   render() {
     return (
       <View style={styles.view_image}>
-        <Image style={styles.image2} resizeMode='cover' source={require('./../images/AMV.jpg')}></Image>
+        <Image style={styles.image2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/AMV.png"}}></Image>
         <Text style={{ color: 'white', textAlign: 'center', fontWeight: "bold" }}>{this.state.Ho_ten}</Text>
         <Text style={{ color: 'white', textAlign: 'center', fontWeight: "bold" }}>{this.state.Ma_bn}</Text>
       </View>

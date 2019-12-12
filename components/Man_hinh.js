@@ -6,8 +6,13 @@ import ABOUT from './MH_ABOUT';
 import Logout from './logout';
 import DOIMK from './DOIMK';
 import Tracuuttkcb from './tracuuttkcb/list';
-
+import HSSKBD from './hososuckhoebandau/list';
+import DKKBTX from './dangkykhambenhtuxa/dangkykhambenhtuxa';
+import NBTTTN from './nguoibenhtutheodoitainha/list';
+import CSSKTM from './chamsocsuckhoetreem/list';
 import Menu from './customizemenu'
+import CSSPNCT from './chamsocsuckhoephunucothai/list';
+
 import { Container, Content, Header, Body, Footer } from 'native-base';
 var { width } = Dimensions.get("window");
 const CustomNavigator = (props) => (
@@ -39,7 +44,7 @@ const routeConfigs = {
       drawerLabel: "Thông tin cá nhân",
       drawerIcon: ({ }) => (
         <Image
-          source={require('./../images/user_login.png')}
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/user_login.png"}}
           style={{ width: 26, height: 26 }}
         />
       ),
@@ -51,7 +56,7 @@ const routeConfigs = {
       drawerLabel: "Quản lý thông tin tài khoản",
       drawerIcon: ({ }) => (
         <Image
-          source={require('./../images/resetpassword1.png')}
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/resetpassword1.png"}}
           style={{ width: 26, height: 26 }}
         />
       ),
@@ -63,7 +68,69 @@ const routeConfigs = {
       drawerLabel: "Tra cứu khám chữa bệnh",
       drawerIcon: ({ }) => (
         <Image
-          source={require('./../images/tracuukcb.png')}
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/tracuukcb.png"}}
+          style={{ width: 26, height: 26 }}
+        />
+      ),
+    }
+  }, 
+  Man_hinh_HSSKBD: {
+    screen: HSSKBD,
+    navigationOptions: {
+      drawerLabel: "Hồ sơ sức khỏe ban đầu",
+      drawerIcon: ({ }) => (
+        <Image
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/hososuckhoe.png"}}
+          style={{ width: 26, height: 26 }}
+        />
+      ),
+    }
+  }, 
+  Man_hinh_DKKBTX: {
+    screen: DKKBTX,
+    navigationOptions: {
+      drawerLabel: "Đăng ký khám bệnh từ xa",
+      drawerIcon: ({ }) => (
+        <Image
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/dangkykhambenh.png"}}
+          style={{ width: 26, height: 26 }}
+        />
+      ),
+    }
+  }, 
+  Man_hinh_NBTTTN: {
+    screen: NBTTTN,
+    navigationOptions: {
+      drawerLabel: "Người bệnh tự theo dõi tại nhà",
+      drawerIcon: ({ }) => (
+        <Image
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/theodoi.png"}}
+          style={{ width: 26, height: 26 }}
+        />
+      ),
+    }
+  }, 
+  
+  Man_hinh_CSSKTM: {
+    screen: CSSKTM,
+    navigationOptions: {
+      drawerLabel: "Chăm sóc sức khỏe trê em",
+      drawerIcon: ({ }) => (
+        <Image
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/chamsocsuckhoetreem.png"}}
+          style={{ width: 26, height: 26 }}
+        />
+      ),
+    }
+  }, 
+  
+  Man_hinh_CSSPNCT: {
+    screen: CSSPNCT,
+    navigationOptions: {
+      drawerLabel: "Chăm sóc sức khỏe phụ nữ có thai",
+      drawerIcon: ({ }) => (
+        <Image
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/chamsocsuckhoephunucothai.png"}}
           style={{ width: 26, height: 26 }}
         />
       ),
@@ -75,7 +142,7 @@ const routeConfigs = {
       drawerLabel: "Đăng xuất",
       drawerIcon: ({ }) => (
         <Image
-          source={require('./../images/logout.png')}
+          source={{ uri: "https://benhvienvietmy.herokuapp.com/logout.png"}}
           style={{ width: 26, height: 26 }}
         />
       ),

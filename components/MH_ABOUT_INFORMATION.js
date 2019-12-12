@@ -49,7 +49,7 @@ export default class app extends Component {
         return (
             <View style={styles.container2}>
                 <View style={styles.view_image}>
-                    <Image style={styles.image} resizeMode='contain' source={require('./../images/login.png')}></Image>
+                    <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/login.png"}}></Image>
                 </View>
                 <View style={styles.container_about}>
                     <View style={styles.column_875}>

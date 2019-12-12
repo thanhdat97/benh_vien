@@ -52,37 +52,37 @@ export default class INFORAMTION extends Component {
                         </Text>
                         <ScrollView>
                             <TouchableOpacity onPress={this.XL_Chon.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/thong_tin_hanh_chinh.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_hanh_chinh.png"}}></Image>
                                 <Text style={styles.text_87121}>
                                     Thông tin hành chính
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/thong_tin_kham_chua_benh.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_kham_chua_benh.png"}}></Image>
                                 <Text style={styles.text_8712}>
                                     Thông tin khám chữa bệnh
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon3.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/don_thuoc.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/don_thuoc.png"}}></Image>
                                 <Text style={styles.text_87123}>
                                     Đơn thuốc
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon4.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/ket_qua_xet_nghiem.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_xet_nghiem.png"}}></Image>
                                 <Text style={styles.text_87121}>
                                     Kết quả xét nghiệm
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon5.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/ket_qua_cdha_tdcn.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_cdha_tdcn.png"}}></Image>
                                 <Text style={styles.text_871212}>
                                     KẾT QUẢ CHẨN ĐOÁN HÌNH ẢNH – THĂM DÒ CHỨC NĂNG
                              </Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon6.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={require('./../../images/ket_qua_phim.png')}></Image>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_phim.png"}}></Image>
                                 <Text style={styles.text_8712}>
                                     Kết quả chụp phim
                              </Text>
