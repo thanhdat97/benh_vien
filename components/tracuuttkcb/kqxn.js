@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import styles from "./../css";
-import AsyncStorage from '@react-native-community/async-storage'
 import Heading from './../../Header'
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { ScrollView } from 'react-native-gesture-handler';

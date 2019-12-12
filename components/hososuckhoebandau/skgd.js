@@ -17,7 +17,7 @@ class FlatListItem extends Component {
     }
     render() {
         if (this.props.item.isTitle == true) {
-            let tableHead= [this.props.item.key]
+            let tableHead = [this.props.item.key]
             return (
                 <View style={styles.container_table2}>
                     <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
@@ -28,7 +28,7 @@ class FlatListItem extends Component {
                     </Table>
                 </View>
             );
-        }else{
+        } else {
             return (
                 <View style={styles.container_table2}>
                     <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
@@ -65,45 +65,64 @@ export default class Danh_sach_PH extends Component {
             fetch('http://27.72.76.115:8181/api/ho-so-sk-ban-dau/get-thong-tin-suc-khoe-gia-dinh/' + JSON_DATA.maBn)
                 .then((response) => response.json())
                 .then((responseData) => {
-                    console.log(responseData)
-                    this.setState({
-                        Danh_sach_ph: responseData
-                    })
+                    if (responseData.status != 500) {
+                        this.setState({
+                            Danh_sach_ph: responseData
+                        })
+                    }
                 })
         })
     }
 
 
     render() {
-        return (
-            <View style={styles.container}>
-                <Heading />
-                <View style={styles.container_about}>
-                    <View style={styles.column_875}>
-                        <Text style={styles.text_877}>
-                            Thông tin súc khỏe gia đình
-                        </Text>
+        if (this.state.Danh_sach_ph.length != 0) {
+            return (
+                <View style={styles.container}>
+                    <Heading />
+                    <View style={styles.container_about}>
+                        <View style={styles.column_875}>
+                            <Text style={styles.text_877}>
+                                Thông tin súc khỏe gia đình
+                            </Text>
 
-                        <View style={styles.container_about2}>
-                            <FlatList
-                                ref={'Danh_sach_ph'}
-                                data={this.state.Danh_sach_ph}
-                                keyExtractor={(item) => item.key}
-                                renderItem={({ item, index }) => {
+                            <View style={styles.container_about2}>
+                                <FlatList
+                                    ref={'Danh_sach_ph'}
+                                    data={this.state.Danh_sach_ph}
+                                    keyExtractor={(item) => item.key}
+                                    renderItem={({ item, index }) => {
 
-                                    return (
-                                        <TouchableOpacity activeOpacity={0.5}>
-                                            <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
-                                        </TouchableOpacity>
-                                    );
-                                }}>
-                            </FlatList>
+                                        return (
+                                            <TouchableOpacity activeOpacity={0.5}>
+                                                <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
+                                            </TouchableOpacity>
+                                        );
+                                    }}>
+                                </FlatList>
 
+                            </View>
                         </View>
                     </View>
                 </View>
-            </View>
-        );
+            );
+        } else {
+            return (
+                <View style={styles.container}>
+                    <Heading />
+                    <View style={styles.container_about}>
+                        <View style={styles.column_875}>
+                            <Text style={styles.text_877}>
+                                Thông tin súc khỏe gia đình
+                            </Text>
+                            <Text style={styles.text_877}>
+                                Hiện không có thông tin
+                            </Text>
+                        </View>
+                    </View>
+                </View>
+            );
+        }
     }
 }
 

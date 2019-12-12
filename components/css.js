@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
+        
     },
     view_image: {
         marginTop: 20,
