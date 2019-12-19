@@ -67,11 +67,13 @@ export default class app extends Component {
                             <Rows data={this.state.tableData} style={styles.data} textStyle={styles.text} />
                         </Table>
                     </View>
-                    <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
-                            <Text style={styles.buttonText}>Biểu đồ</Text>
-                        </LinearGradient>
-                    </TouchableOpacity>
+                    <View style={styles.wrap_linear_hs_act}>
+                        <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
+                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567}>
+                                <Text style={styles.buttonText}>Biểu đồ</Text>
+                            </LinearGradient>
+                        </TouchableOpacity>
+                    </View>
                 </ScrollView>
             </View>
         )

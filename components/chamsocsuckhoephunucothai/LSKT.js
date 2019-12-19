@@ -268,7 +268,7 @@ export default class app extends Component {
                         </View>
                     </View>
                     <View style={styles.container}>
-                        <ScrollView horizontal={true}>
+                        <ScrollView horizontal={true} marginHorizontal={10} indicatorStyle={"black"} style={styles.scroll_table}>
                             <Table style={{ flexDirection: 'column' }}>
                                 <TableWrapper style={{ flexDirection: 'row', height: 150 }}>
                                     <Table style={{ flexDirection: 'row', height: "100%" }} borderStyle={{ borderWidth: 1 }}>

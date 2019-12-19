@@ -10,15 +10,22 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-native-fontawesome": "^0.1.0",
     "@react-native-community/async-storage": "^1.6.3",
     "anychart": "^8.7.0",
     "dateformat": "^3.0.3",
+    "font-awesome": "^4.7.0",
+    "link": "^0.1.5",
     "native-base": "^2.13.8",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "^0.61.5",
     "react-native-chart-kit": "^4.1.0",
     "react-native-check-box": "^2.1.7",
     "react-native-datepicker": "^1.7.2",
+    "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "^1.5.2",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-modal": "^11.5.3",
@@ -30,11 +37,13 @@
     "react-native-svg": "^9.13.6",
     "react-native-table-component": "^1.2.1",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.2",
     "react-native-webview": "^7.6.0",
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.3.3",
     "react-navigation-stack": "^1.10.3",
-    "strtotime": "^1.0.0"
+    "strtotime": "^1.0.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "7.7.5",

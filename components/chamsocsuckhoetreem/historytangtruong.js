@@ -58,8 +58,8 @@ export default class app extends Component {
                     </View>
                     <View style={styles.container_table}>
                         <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-                            <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text} />
-                            <Rows data={this.state.tableData} style={styles.data} textStyle={styles.text} />
+                            <Row data={this.state.tableHead} style={styles.headact} textStyle={styles.text} />
+                            <Rows data={this.state.tableData} style={styles.dataact} textStyle={styles.text} />
                         </Table>
                     </View>
                 </ScrollView>

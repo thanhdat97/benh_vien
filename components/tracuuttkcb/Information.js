@@ -3,6 +3,9 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import Heading from './../../Header'
 import { ScrollView } from 'react-native-gesture-handler';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class INFORAMTION extends Component {
     static navigationOptions = {
@@ -51,41 +54,65 @@ export default class INFORAMTION extends Component {
                             Ngày khám chữa bệnh: {this.state.ngayKham}
                         </Text>
                         <ScrollView>
-                            <TouchableOpacity onPress={this.XL_Chon.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_hanh_chinh.png"}}></Image>
-                                <Text style={styles.text_87121}>
-                                    Thông tin hành chính
+                            <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="information" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Thông tin hành chính
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_kham_chua_benh.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Thông tin khám chữa bệnh
+                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="information" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Thông tin khám chữa bệnh
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/don_thuoc.png"}}></Image>
-                                <Text style={styles.text_87123}>
-                                    Đơn thuốc
+                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="pil" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Đơn thuốc
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_xet_nghiem.png"}}></Image>
-                                <Text style={styles.text_87121}>
-                                    Kết quả xét nghiệm
+                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="beaker" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Kết quả xét nghiệm
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_cdha_tdcn.png"}}></Image>
-                                <Text style={styles.text_871212}>
-                                    KẾT QUẢ CHẨN ĐOÁN HÌNH ẢNH – THĂM DÒ CHỨC NĂNG
+                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="heartbeat" color="green" size={30} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Kết quả chuẩn đoán hình ảnh - Thăm dò chức năng
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon6.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/ket_qua_phim.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Kết quả chụp phim
+                            <TouchableOpacity onPress={this.XL_Chon6.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="tools-2" color="green" size={30} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Kết quả chụp phim
                              </Text>
+                                </View>
                             </TouchableOpacity>
                         </ScrollView>
                     </View>

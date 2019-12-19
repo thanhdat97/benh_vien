@@ -27,13 +27,13 @@ export default class MH_State extends Component {
             data: null,
             noidungkham: '',
             sdt: '',
-            email:''
+            email: ''
         }
         AsyncStorage.getItem('DATA_LOGIN', (err, result) => {
             if (result != null) {
                 let JSON_DATA = JSON.parse(result)
                 this.setState({
-                    maBn:JSON_DATA.maBn
+                    maBn: JSON_DATA.maBn
                 })
             }
         });
@@ -50,12 +50,12 @@ export default class MH_State extends Component {
         this.setState({ mockData: DSBS })
     }
     XL_Nhan() {
-        if(this.state.date==null||this.state.data==null||this.state.noidungkham==''||this.state.sdt==''||this.state.email==''){
+        if (this.state.date == null || this.state.data == null || this.state.noidungkham == '' || this.state.sdt == '' || this.state.email == '') {
             Alert.alert(
                 'Thông báo lỗi',
                 'Bạn vui lòng nhập đầy thông tin'
             )
-        }else if (!IsEmail(this.state.email)) {
+        } else if (!IsEmail(this.state.email)) {
             Alert.alert(
                 'Thông báo lỗi',
                 'Email không đúng định dạng'
@@ -65,7 +65,7 @@ export default class MH_State extends Component {
                 'Thông báo lỗi',
                 'SDT không hợp lệ'
             )
-        }else{
+        } else {
             fetch('http://27.72.76.115:8181/api/dang-ky-kham-benh/dang-ky', {
                 method: 'POST',
                 headers: {
@@ -73,14 +73,14 @@ export default class MH_State extends Component {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    buoi:this.state.value,
+                    buoi: this.state.value,
                     dienThoai: this.state.sdt,
                     email: this.state.email,
-                    id:{'maBn':this.state.maBn,'ngay':this.state.date},
-                    maBn:this.state.maBn,
-                    ngay:this.state.date,
-                    noiDungKham:this.state.noidungkham,
-                    tenBacSi:this.state.data[0]
+                    id: { 'maBn': this.state.maBn, 'ngay': this.state.date },
+                    maBn: this.state.maBn,
+                    ngay: this.state.date,
+                    noiDungKham: this.state.noidungkham,
+                    tenBacSi: this.state.data[0]
                 })
             })
                 .then((response) => response.json())
@@ -88,10 +88,10 @@ export default class MH_State extends Component {
                     Alert.alert(
                         'Thông báo',
                         'Đặt lịch thành công', [
-                            {
-                                text: "OK", onPress: () => {}
-                            }
-                        ]
+                        {
+                            text: "OK", onPress: () => { }
+                        }
+                    ]
                     )
                 })
         }
@@ -108,30 +108,33 @@ export default class MH_State extends Component {
                             Đăng ký khám bệnh từ xa
                         </Text>
 
-                        <View style={styles.flexstart}>
-                            <DatePicker
-                                style={{ width: "100%" }}
-                                date={this.state.date}
-                                mode="date"
-                                placeholder="Ngày khám"
-                                format="YYYY-MM-DD"
-                                minDate={datenow}
-                                confirmBtnText="Confirm"
-                                cancelBtnText="Cancel"
-                                customStyles={{
-                                    dateIcon: {
-                                        display: "none"
-                                    },
-                                    dateInput: {
-                                        width: '100%',
-                                        fontSize: 10,
-                                        marginRight: 5,
-                                        borderRadius: 3,
-                                    }
-                                }}
+                        <View style={styles.wrap_all_date_time_dangkykhambenhtuxa}>
+                            <View style={styles.wrap_date_time_dangkykhambenhtuxa}>
+                                <View style={styles.wrap_date_time_dangkykhambenhtuxa1}>
+                                    <DatePicker
+                                        style={{ width: "100%" }}
+                                        date={this.state.date}
+                                        mode="date"
+                                        placeholder="Chọn ngày khám"
+                                        format="YYYY-MM-DD"
+                                        minDate={datenow}
+                                        confirmBtnText="Confirm"
+                                        cancelBtnText="Cancel"
+                                        customStyles={{
+                                            dateIcon: {
+                                                display: "none"
+                                            },
+                                            dateInput: {
+                                                width: '50%',
+                                                fontSize: 10,
+                                                borderRadius: 3,
+                                            }
+                                        }}
 
-                                onDateChange={(date) => { this.setState({ date: date }) }}
-                            />
+                                        onDateChange={(date) => { this.setState({ date: date }) }}
+                                    />
+                                </View>
+                            </View>
                             <View style={{ margin: 20 }}>
                                 <RadioForm
                                     radio_props={this.state.radio_props}
@@ -142,29 +145,32 @@ export default class MH_State extends Component {
                                     buttonColor={'#50C900'}
                                 />
                             </View>
-                            <Select2
-                                isSelectSingle
-                                style={styles.input}
-                                colorTheme={'blue'}
-                                popupTitle='Mời bạn chọn bác sĩ'
-                                title='Mời bạn chọn bác sĩ'
-                                data={this.state.mockData}
-                                onSelect={data => {
-                                    this.setState({ data });
-                                }}
-                                onRemoveItem={data => {
-                                    this.setState({ data });
-                                }}
-                            />
+
+                            <View style={styles.select2_chonbacsi}>
+                                <Select2
+                                style={styles.select2_chonbacsi1}
+                                    isSelectSingle
+                                    colorTheme={'blue'}
+                                    popupTitle='Mời bạn chọn bác sĩ'
+                                    title='Mời bạn chọn bác sĩ'
+                                    data={this.state.mockData}
+                                    onSelect={data => {
+                                        this.setState({ data });
+                                    }}
+                                    onRemoveItem={data => {
+                                        this.setState({ data });
+                                    }}
+                                />
+                            </View>
                             <TextInput onChangeText={(noidungkham) => this.setState({ noidungkham })}
                                 value={this.state.noidungkham} placeholder='Nội dung khám' style={styles.input} />
                             <TextInput onChangeText={(sdt) => this.setState({ sdt })}
                                 value={this.state.sdt} placeholder='Số điện thoại' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
-                           <TextInput onChangeText={(email) => this.setState({ email })}
+                            <TextInput onChangeText={(email) => this.setState({ email })}
                                 value={this.state.email} placeholder='Email' style={styles.input} />
                             <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
-                                <View style={styles.button}>
-                                    <Text style={styles.text_button}>Gởi đăng ký</Text>
+                                <View style={styles.wrap_button_dangkykhambenhtuxa}>
+                                    <Text style={styles.button_dangkykhambenhtuxa}>Đăng ký</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>

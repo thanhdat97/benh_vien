@@ -12,25 +12,31 @@ import NBTTTN from './nguoibenhtutheodoitainha/list';
 import CSSKTM from './chamsocsuckhoetreem/list';
 import Menu from './customizemenu'
 import CSSPNCT from './chamsocsuckhoephunucothai/list';
+import styles from './css';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../android/app/src/main/assets/selection.json';
+import { PureComponent } from 'react';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 
 import { Container, Content, Header, Body, Footer } from 'native-base';
 var { width } = Dimensions.get("window");
 const CustomNavigator = (props) => (
   <Container>
-    <Header style={{ height: 120}}>
+    <Header style={styles.header_customize}>
       <Body style={{ alignItems: 'center', justifyContent: 'center' }}>
         <View style={{ flexDirection: 'column' }}>
-           <Menu />
+          <Menu />
         </View>
       </Body>
     </Header>
     <Content>
       <DrawerItems {...props} />
     </Content>
-    <Footer style={{ height: 30}}>
-      <Body style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <View style={{justifyContent:'center'}}>
-          <Text style={{ color: 'white',textAlign:'center',fontWeight:"bold"  }}>Y BA ĐIỆN TỬ </Text>
+    <Footer style={styles.footer_customize}>
+      <Body style={styles.body_wrap_footer_customize}>
+        <View style={styles.wrap_footer_customize}>
+          <Text style={styles.text_footer_customize}>Y BA ĐIỆN TỬ </Text>
+          <Text style={styles.text_footer_customize_version}>(Phiên bản: 5.0.0)</Text>
         </View>
       </Body>
     </Footer>
@@ -43,22 +49,20 @@ const routeConfigs = {
     navigationOptions: {
       drawerLabel: "Thông tin cá nhân",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/user_login.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="settings" color="green" size={20} />
+        </View>
       ),
     }
   },
   Man_hinh_DOIMK: {
     screen: DOIMK,
     navigationOptions: {
-      drawerLabel: "Quản lý thông tin tài khoản",
+      drawerLabel: "Đổi mật khẩu",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/resetpassword1.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="lock" color="red" size={20} />
+        </View>
       ),
     }
   },
@@ -67,84 +71,77 @@ const routeConfigs = {
     navigationOptions: {
       drawerLabel: "Tra cứu khám chữa bệnh",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/tracuukcb.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="search" color="green" size={20} />
+        </View>
       ),
     }
-  }, 
+  },
   Man_hinh_HSSKBD: {
     screen: HSSKBD,
     navigationOptions: {
       drawerLabel: "Hồ sơ sức khỏe ban đầu",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/hososuckhoe.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="paste" color="blue" size={25} />
+        </View>
       ),
     }
-  }, 
+  },
   Man_hinh_DKKBTX: {
     screen: DKKBTX,
     navigationOptions: {
       drawerLabel: "Đăng ký khám bệnh từ xa",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/dangkykhambenh.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="playlist_add_check" color="red" size={25} />
+        </View>
       ),
     }
-  }, 
+  },
   Man_hinh_NBTTTN: {
     screen: NBTTTN,
     navigationOptions: {
       drawerLabel: "Người bệnh tự theo dõi tại nhà",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/theodoi.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="feed" color="blue" size={20} />
+        </View>
       ),
     }
-  }, 
-  
+  },
+
   Man_hinh_CSSKTM: {
     screen: CSSKTM,
     navigationOptions: {
-      drawerLabel: "Chăm sóc sức khỏe trê em",
+      drawerLabel: "Chăm sóc sức khỏe trẻ em",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/chamsocsuckhoetreem.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="health" color="green" size={25} />
+        </View>
       ),
     }
-  }, 
-  
+  },
+
   Man_hinh_CSSPNCT: {
     screen: CSSPNCT,
     navigationOptions: {
       drawerLabel: "Chăm sóc sức khỏe phụ nữ có thai",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/chamsocsuckhoephunucothai.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="health" color="red" size={25}/>
+        </View>
       ),
     }
-  }, 
+  },
   Logout: {
     screen: Logout,
     navigationOptions: {
       drawerLabel: "Đăng xuất",
       drawerIcon: ({ }) => (
-        <Image
-          source={{ uri: "https://benhvienvietmy.herokuapp.com/logout.png"}}
-          style={{ width: 26, height: 26 }}
-        />
+        <View>
+          <Icon name="switch" color="red"size={20} />
+        </View>
       ),
     }
   }
@@ -155,7 +152,7 @@ const drawerNavigatorConfig = {
 
   initialRouteName: "Man_hinh_ABOUT",
   contentComponent: CustomNavigator,
-  drawerWidth: width * 3 / 4,
+  drawerWidth: "90%",
   drawerPosition: "left",
   contentOptions: {
     activeTintColor: "red",

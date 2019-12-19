@@ -112,7 +112,7 @@ export default class Danh_sach_PH extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Thông tin súc khỏe cá nhân
+                                Thông tin sức khỏe cá nhân
                             </Text>
                             <Text style={styles.text_877}>
                                 Hiện không có thông tin
