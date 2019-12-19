@@ -60,7 +60,7 @@ export default class MH_State extends Component {
                 { label: 'Kiểm soát hoàn toàn', value: 5 },
             ],
             diemcau5: 0,
-            tongdiem: 0
+            tongdiem:0
         }
         AsyncStorage.getItem('DATA_LOGIN', (err, result) => {
             if (result != null) {
@@ -72,7 +72,7 @@ export default class MH_State extends Component {
         });
     }
     XL_Nhan() {
-        if (this.state.diemcau1 == 0 || this.state.diemcau2 == 0 || this.state.diemcau3 == 0 || this.state.diemcau4 == 0 || this.state.diemcau5 == 0) {
+        if (this.state.diemcau1 == 0||this.state.diemcau2 == 0||this.state.diemcau3 == 0||this.state.diemcau4 == 0||this.state.diemcau5 == 0) {
             Alert.alert(
                 'Thông báo lỗi',
                 'Bạn vui lòng chọn đầy đủ đáp án cho các câu hỏi '
@@ -110,7 +110,10 @@ export default class MH_State extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Người bệnh tự theo dõi tại nhà => Test ACT
+                                Người bệnh tự theo dõi tại nhà
+                            </Text>
+                            <Text style={styles.text_877}>
+                                Test ACT
                             </Text>
                             <View style={styles.flexstart}>
                                 <Text style={styles.text_87712}>
@@ -120,11 +123,9 @@ export default class MH_State extends Component {
                                     <RadioForm
                                         radio_props={this.state.cau1}
                                         initial={-1}
-                                        onPress={(value) => { this.setState({ diemcau1: value, tongdiem: value + this.state.diemcau2 + this.state.diemcau3 + this.state.diemcau4 + this.state.diemcau5 }) }}
+                                        onPress={(value) => { this.setState({ diemcau1: value,tongdiem:value+this.state.diemcau2+this.state.diemcau3+this.state.diemcau4+this.state.diemcau5 }) }}
                                         labelStyle={{ fontSize: 15, color: 'black' }}
                                         buttonColor={'#50C900'}
-                                        buttonSize={20}
-                                        buttonOuterSize={20}
                                     />
                                 </View>
                                 <Text style={styles.text_87712}>
@@ -134,11 +135,9 @@ export default class MH_State extends Component {
                                     <RadioForm
                                         radio_props={this.state.cau2}
                                         initial={-1}
-                                        onPress={(value) => { this.setState({ diemcau2: value, tongdiem: this.state.diemcau1 + value + this.state.diemcau3 + this.state.diemcau4 + this.state.diemcau5 }) }}
+                                        onPress={(value) => { this.setState({ diemcau2: value,tongdiem:this.state.diemcau1+value+this.state.diemcau3+this.state.diemcau4+this.state.diemcau5 }) }}
                                         labelStyle={{ fontSize: 15, color: 'black' }}
                                         buttonColor={'#50C900'}
-                                        buttonSize={20}
-                                        buttonOuterSize={20}
                                     />
                                 </View>
                                 <Text style={styles.text_87712}>
@@ -148,11 +147,9 @@ export default class MH_State extends Component {
                                     <RadioForm
                                         radio_props={this.state.cau3}
                                         initial={-1}
-                                        onPress={(value) => { this.setState({ diemcau3: value, tongdiem: this.state.diemcau1 + this.state.diemcau2 + value + this.state.diemcau4 + this.state.diemcau5 }) }}
+                                        onPress={(value) => { this.setState({ diemcau3: value,tongdiem:this.state.diemcau1+this.state.diemcau2+value+this.state.diemcau4+this.state.diemcau5 }) }}
                                         labelStyle={{ fontSize: 15, color: 'black' }}
                                         buttonColor={'#50C900'}
-                                        buttonSize={20}
-                                        buttonOuterSize={20}
                                     />
                                 </View>
                                 <Text style={styles.text_87712}>
@@ -162,11 +159,9 @@ export default class MH_State extends Component {
                                     <RadioForm
                                         radio_props={this.state.cau4}
                                         initial={-1}
-                                        onPress={(value) => { this.setState({ diemcau4: value, tongdiem: this.state.diemcau1 + this.state.diemcau2 + this.state.diemcau3 + value + this.state.diemcau5 }) }}
+                                        onPress={(value) => { this.setState({ diemcau4: value,tongdiem:this.state.diemcau1+this.state.diemcau2+this.state.diemcau3+value+this.state.diemcau5  }) }}
                                         labelStyle={{ fontSize: 15, color: 'black' }}
                                         buttonColor={'#50C900'}
-                                        buttonSize={20}
-                                        buttonOuterSize={20}
                                     />
                                 </View>
                                 <Text style={styles.text_87712}>
@@ -176,27 +171,25 @@ export default class MH_State extends Component {
                                     <RadioForm
                                         radio_props={this.state.cau5}
                                         initial={-1}
-                                        onPress={(value) => { this.setState({ diemcau5: value, tongdiem: this.state.diemcau1 + this.state.diemcau2 + this.state.diemcau3 + this.state.diemcau4 + value }) }}
+                                        onPress={(value) => { this.setState({ diemcau5: value,tongdiem:this.state.diemcau1+this.state.diemcau2+this.state.diemcau3+this.state.diemcau4+value }) }}
                                         labelStyle={{ fontSize: 15, color: 'black' }}
                                         buttonColor={'#50C900'}
-                                        buttonSize={20}
-                                        buttonOuterSize={20}
                                     />
                                 </View>
                                 <Text style={styles.text_87712}>
                                     Tổng điểm: {this.state.tongdiem}
                                 </Text>
-                                <View style={styles.row_linear_act}>
+                                <View style={styles.row}>
                                     <View style={styles.linear2}>
                                         <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
-                                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                            <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
                                                 <Text style={styles.buttonText}>Cập Nhật</Text>
                                             </LinearGradient>
                                         </TouchableOpacity>
                                     </View>
                                     <View style={styles.linear2}>
                                         <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                            <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
                                                 <Text style={styles.buttonText}>Xem lịch sử</Text>
                                             </LinearGradient>
                                         </TouchableOpacity>

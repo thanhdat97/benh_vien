@@ -30,4 +30,11 @@ const Man_hinh = createStackNavigator({
 });
 const App= createAppContainer(Man_hinh);    
 
-export default App 
+export default class Chinh extends Component{
+
+    render(){
+        return(
+            <App />
+        );
+    }
+}

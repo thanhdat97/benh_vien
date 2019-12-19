@@ -181,16 +181,14 @@ export default class app extends Component {
                 disabled={true}
             />])
         }else{
-            tableData.push(['Tiền sử thai chết lưu', 
-            <CheckBox
+            tableData.push(['Tiền sử thai chết lưu', <CheckBox
             style={{ flex: 1, padding: 10,alignItems: 'center'}}
             isChecked={false}
             disabled={true}
         />])
         }
         if (this.state.deNon!=0) {
-            tableData.push(['Tiền sử đẻ non, con dưới 2500g', 
-            <CheckBox
+            tableData.push(['Tiền sử đẻ non, con dưới 2500g', <CheckBox
                 style={{ flex: 1, padding: 10,alignItems: 'center' }}
                 isChecked={true}
                 disabled={true}
@@ -315,8 +313,8 @@ export default class app extends Component {
                     </View>
                     <View style={styles.container_table}>
                         <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-                            <Row data={this.state.tableHead} style={styles.headact} textStyle={styles.text} />
-                            <Rows data={this.state.tableData} style={styles.dataact1} textStyle={styles.text} />
+                            <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text} />
+                            <Rows data={this.state.tableData} style={styles.data} textStyle={styles.text} />
                         </Table>
                     </View>
                 </ScrollView>

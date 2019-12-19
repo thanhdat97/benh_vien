@@ -69,24 +69,27 @@ export default class MH_State extends Component {
                 <View style={styles.container_about}>
                     <View style={styles.column_875}>
                         <Text style={styles.text_877}>
-                            Người bệnh tự theo dõi tại nhà => Huyết áp
+                            Người bệnh tự theo dõi tại nhà
+                        </Text>
+                        <Text style={styles.text_877}>
+                            Huyết áp
                         </Text>
                         <View style={styles.flexstart}>
                             <TextInput onChangeText={(huyetaptoithieu) => this.setState({ huyetaptoithieu })}
                                 value={this.state.huyetaptoithieu} placeholder='Huyết áp tối thiếu' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
                             <TextInput onChangeText={(huyetaptoida) => this.setState({ huyetaptoida })}
                                 value={this.state.huyetaptoida} placeholder='Huyết áp tối đa' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
-                            <View style={styles.row_linear_act}>
+                            <View style={styles.row}>
                                 <View style={styles.linear2}>
                                     <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
                                             <Text style={styles.buttonText}>Cập Nhật</Text>
                                         </LinearGradient>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={styles.linear2}>
                                     <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
                                             <Text style={styles.buttonText}>Xem lịch sử</Text>
                                         </LinearGradient>
                                     </TouchableOpacity>

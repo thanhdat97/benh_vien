@@ -31,17 +31,17 @@ export default class Information extends Component {
                     <Text style={styles.text_877}>
                         Chọn chức năng
                     </Text>
-                    <View style={styles.row_linear_act}>
+                    <View style={styles.row}>
                         <View style={styles.linear3}>
                             <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                                <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_32756732}>
                                     <Text style={styles.buttonText}>Yếu tố nguy cơ</Text>
                                 </LinearGradient>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.linear3}>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)} activeOpacity={0.5}>
-                                <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_32756732}>
                                     <Text style={styles.buttonText}>Lịch sử khám thai</Text>
                                 </LinearGradient>
                             </TouchableOpacity>

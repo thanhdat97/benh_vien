@@ -100,7 +100,7 @@ export default class Cap_nhat_Infomation extends Component {
                     <View style={styles.container5}>
                         <View style={styles.column2}>
                             <Text style={styles.row}>
-                                <Text style={styles.text_8759}>
+                                <Text style={styles.text_875}>
                                     <Text style={styles.text_87}>
                                         Mã bênh nhân:
                                  </Text>

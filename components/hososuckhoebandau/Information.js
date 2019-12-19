@@ -3,9 +3,6 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import Heading from './../../Header'
 import { ScrollView } from 'react-native-gesture-handler';
-import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-import fontelloConfig from '../../android/app/src/main/assets/selection.json';
-const Icon = createIconSetFromIcoMoon(fontelloConfig);
 export default class INFORAMTION extends Component {
     static navigationOptions = {
         header: null
@@ -36,60 +33,39 @@ export default class INFORAMTION extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading navigation={this.props.navigation} />
+                <Heading />
                 <View style={styles.container_about}>
                     <View style={styles.column_875}>
                         <ScrollView>
-                            <Text style={styles.text_title_hososuckhoebandau}>Hồ sơ sức khỏe ban đầu</Text>
-                            <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin hành chính
+                            <TouchableOpacity onPress={this.XL_Chon.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/thong_tin_hanh_chinh.png"}}></Image>
+                                <Text style={styles.text_87121}>
+                                    Thông tin hành chính
                              </Text>
-                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin sức khỏe cá nhân
+                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoecanhan.png"}}></Image>
+                                <Text style={styles.text_8712}>
+                                    Thông tin sức khỏe cá nhân
                              </Text>
-                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin sức khỏe gia đình
+                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoegiadinh.png"}}></Image>
+                                <Text style={styles.text_8712}>
+                                   Thông tin sức khỏe gia đình
                              </Text>
-                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin sức khỏe sinh sản
+                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/suckhoesinhsan.png"}}></Image>
+                                <Text style={styles.text_8712}>
+                                    Thông tin sức khỏe sinh sản
                              </Text>
-                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin khác
+                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)} style={styles.text_875}>
+                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/hososuckhoe.png"}}></Image>
+                                <Text style={styles.text_8712}>
+                                    Thông tin khác
                              </Text>
-                                </View>
                             </TouchableOpacity>
                         </ScrollView>
                     </View>

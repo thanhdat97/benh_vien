@@ -30,7 +30,7 @@ export default class app extends Component {
         
         return (
             <View style={styles.container}>
-                <Heading message={'Thông tin cá nhân'} navigation={this.props.navigation}/>
+                <Heading />
                 <MH_ABOUT_INFORMATION />
             </View>
         )
