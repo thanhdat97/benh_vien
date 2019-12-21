@@ -3,6 +3,9 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import Heading from './../../Header'
 import { ScrollView } from 'react-native-gesture-handler';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 export default class INFORAMTION extends Component {
     static navigationOptions = {
         header: null
@@ -36,50 +39,76 @@ export default class INFORAMTION extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading />
-                <View style={styles.container_about}>
-                    <View style={styles.column_875}>
-                        <ScrollView>
-                            <TouchableOpacity onPress={this.XL_Chon.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/mach.png"}}></Image>
-                                <Text style={styles.text_87121}>
-                                    Mạch
+                <Heading navigation={this.props.navigation} message={'Người bệnh tự theo dõi tại nhà'}/>
+                <ScrollView>
+                    <View style={styles.container_about}>
+                        <View style={styles.column_875}>
+                            <Text style={styles.text_877}>
+                                Người bệnh tự theo dõi tại nhà
                              </Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/huyetap.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Huyết áp
+                            <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="health1" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Mạch
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/nhietdo.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                   Nhiệt độ
+                            <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="heartbeat" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Huyết áp
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/duongmau.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Đường máu
+                            <TouchableOpacity onPress={this.XL_Chon3.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="thermometer-3" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Nhiệt độ
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/hba1c.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Hba1C
+                            <TouchableOpacity onPress={this.XL_Chon4.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="heart2" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Đường máu
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={this.XL_Chon6.bind(this)} style={styles.text_875}>
-                                <Image style={styles.image_ql2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/act.png"}}></Image>
-                                <Text style={styles.text_8712}>
-                                    Test ACT
+                            <TouchableOpacity onPress={this.XL_Chon5.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="lab2" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Hba1C
                              </Text>
+                                </View>
                             </TouchableOpacity>
-                        </ScrollView>
+                            <TouchableOpacity onPress={this.XL_Chon6.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="beaker" color="green" size={35} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Test ACT
+                             </Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                </View>
-
+                </ScrollView>
             </View>
         )
     }

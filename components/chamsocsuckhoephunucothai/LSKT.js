@@ -2,16 +2,25 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import styles from "./../css";
 import AsyncStorage from '@react-native-community/async-storage'
-import Heading from './../../Header'
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { Table, TableWrapper, Row, Col, Cell } from 'react-native-table-component';
 import { ScrollView } from 'react-native-gesture-handler';
 
 
 var dateformat = require('dateformat')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Lịch sử khám thai",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         let DT = this.props.navigation.state.params.DT;
@@ -233,7 +242,6 @@ export default class app extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading />
                 <ScrollView>
                     <View style={styles.container_about12}>
                         <View style={styles.column_875}>
@@ -267,10 +275,10 @@ export default class app extends Component {
                             </Text>
                         </View>
                     </View>
-                    <View style={styles.container}>
-                        <ScrollView horizontal={true}>
+                    <View style={styles.containertbl}>
+                        <ScrollView horizontal={true} marginHorizontal={10} indicatorStyle={"black"} style={styles.scroll_table}>
                             <Table style={{ flexDirection: 'column' }}>
-                                <TableWrapper style={{ flexDirection: 'row', height: 150 }}>
+                                <TableWrapper style={{ flexDirection: 'row', height: 200 }}>
                                     <Table style={{ flexDirection: 'row', height: "100%" }} borderStyle={{ borderWidth: 1 }}>
                                         <Col data={['Ngày khám']} style={{ width: 100, backgroundColor: '#c8e1ff' }} textStyle={styles.text} />
                                         <TableWrapper style={{ width: 2000, flexDirection: 'column' }}>
@@ -344,6 +352,7 @@ export default class app extends Component {
                                 </TableWrapper>
                             </Table>
                         </ScrollView>
+                        <Text style={styles.text_help}>Vui lòng vuốt biểu đồ qua phải để xem nhiều hơn</Text>
                     </View>
                 </ScrollView>
             </View >

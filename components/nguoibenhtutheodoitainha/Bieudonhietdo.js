@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions } from 'react-native';
-import styles from "./../css";
-import Heading from './../../Header'
-import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'
 import { WebView } from 'react-native-webview';
-
-var dateformat = require('dateformat')
-var strtotime = require('strtotime')
-
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Biểu đồ nhiệt độ",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +34,7 @@ export default class app extends Component {
     }
     render() {
         return (
-            <WebView source={{ uri: 'http://vietmy.thuongmaiso.com.vn/dang-ky-kham-benh/bieudonhietdoapp/?benhnhan=' + this.state.maBn }} />
+            <WebView source={{ uri: 'https://hososuckhoedientuvietmy.vn/dang-ky-kham-benh/bieudonhietdoapp/?benhnhan=' + this.state.maBn }} />
         )
 
     }

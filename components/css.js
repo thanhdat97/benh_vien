@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Dimensions, Platform } from 'react-native';
 var { width, height } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
     container_header: {
         flexDirection: 'row',
@@ -33,13 +34,13 @@ const styles = StyleSheet.create({
     },
 
     wrap_dangnhap: {
-        height: "55%",
+        height: "48%",
         backgroundColor: "#fff",
         marginLeft: "7%",
         marginRight: "7%",
         borderRadius: 5,
         zIndex: 0,
-        paddingTop: 40,
+        paddingTop:5
     },
     view_image_login_dangnhap: {
         marginBottom: 30,
@@ -299,7 +300,7 @@ const styles = StyleSheet.create({
     tieu_de_about: {
         fontSize: 20,
         textAlign: 'center',
-        color: '#ffff',
+        color: '#000',
         fontWeight: "bold",
     },
     image: {
@@ -471,6 +472,38 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //binhvietthem
     header_customize: {
         height: 130,

@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import styles from "./../css";
-import Heading from './../../Header'
 import { ScrollView } from 'react-native-gesture-handler';
 
 var dateformat = require('dateformat')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Thông tin khám chữa bệnh",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         let DT = this.props.navigation.state.params.DT;
@@ -76,7 +85,6 @@ export default class app extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading />
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>

@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "benh_vien-tvOS.app"
-               BlueprintName = "benh_vien-tvOS"
-               ReferencedContainer = "container:benh_vien.xcodeproj">
+               BuildableName = "benhvien-tvOS.app"
+               BlueprintName = "benhvien-tvOS"
+               ReferencedContainer = "container:benhvien.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "benh_vien-tvOSTests.xctest"
-               BlueprintName = "benh_vien-tvOSTests"
-               ReferencedContainer = "container:benh_vien.xcodeproj">
+               BuildableName = "benhvien-tvOSTests.xctest"
+               BlueprintName = "benhvien-tvOSTests"
+               ReferencedContainer = "container:benhvien.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "benh_vien-tvOSTests.xctest"
-               BlueprintName = "benh_vien-tvOSTests"
-               ReferencedContainer = "container:benh_vien.xcodeproj">
+               BuildableName = "benhvien-tvOSTests.xctest"
+               BlueprintName = "benhvien-tvOSTests"
+               ReferencedContainer = "container:benhvien.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "benh_vien-tvOS.app"
-            BlueprintName = "benh_vien-tvOS"
-            ReferencedContainer = "container:benh_vien.xcodeproj">
+            BuildableName = "benhvien-tvOS.app"
+            BlueprintName = "benhvien-tvOS"
+            ReferencedContainer = "container:benhvien.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "benh_vien-tvOS.app"
-            BlueprintName = "benh_vien-tvOS"
-            ReferencedContainer = "container:benh_vien.xcodeproj">
+            BuildableName = "benhvien-tvOS.app"
+            BlueprintName = "benhvien-tvOS"
+            ReferencedContainer = "container:benhvien.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "benh_vien-tvOS.app"
-            BlueprintName = "benh_vien-tvOS"
-            ReferencedContainer = "container:benh_vien.xcodeproj">
+            BuildableName = "benhvien-tvOS.app"
+            BlueprintName = "benhvien-tvOS"
+            ReferencedContainer = "container:benhvien.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

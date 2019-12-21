@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from "./../css";
-import Heading from './../../Header'
 import { Table, Row, Rows } from 'react-native-table-component';
 import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'
 import LinearGradient from 'react-native-linear-gradient';
 
 var dateformat = require('dateformat')
-var strtotime = require('strtotime')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Lịch sử Hba1C",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
 
@@ -50,7 +58,6 @@ export default class app extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading />
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
@@ -61,15 +68,17 @@ export default class app extends Component {
                     </View>
                     <View style={styles.container_table}>
                         <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-                            <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text} />
-                            <Rows data={this.state.tableData} style={styles.data} textStyle={styles.text} />
+                            <Row data={this.state.tableHead} style={styles.headact} textStyle={styles.text} />
+                            <Rows data={this.state.tableData} style={styles.dataact} textStyle={styles.text} />
                         </Table>
                     </View>
-                    <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
-                            <Text style={styles.buttonText}>Biểu đồ</Text>
-                        </LinearGradient>
-                    </TouchableOpacity>
+                    <View style={styles.wrap_linear_hs_act}>
+                        <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
+                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567}>
+                                <Text style={styles.buttonText}>Biểu đồ</Text>
+                            </LinearGradient>
+                        </TouchableOpacity>
+                    </View>
                 </ScrollView>
             </View>
         )

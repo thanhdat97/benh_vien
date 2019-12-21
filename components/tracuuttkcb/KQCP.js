@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { WebView } from 'react-native-webview';
-import Heading from './../../Header'
 import styles from "./../css";
-import { View, Text} from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 var dateformat = require('dateformat')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Kết quả chụp phim",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         let DT = this.props.navigation.state.params.DT;
@@ -35,22 +44,22 @@ export default class app extends Component {
             return (
                 <WebView source={{ uri: this.state.link }} />
             );
-        } else if(this.state.link.length==0){
+        } else if (this.state.link.length == 0) {
             return (
                 <View style={styles.container}>
-                    <Heading />
-                    <View style={styles.container_about}>
-                        <View style={styles.column_875}>
-                            <Text style={styles.text_877}>
-                                Kết quả chụp phim
-                            </Text>
-                            
+                    <ScrollView>
+                        <View style={styles.container_about}>
+                            <View style={styles.column_875}>
+                                <Text style={styles.text_877}>
+                                   Không có kết quả
+                                </Text>
+                            </View>
                         </View>
-                    </View>
+                    </ScrollView>
                 </View>
             );
-        }else{
-            return(
+        } else {
+            return (
                 null
             );
         }

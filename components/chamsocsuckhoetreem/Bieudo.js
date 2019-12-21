@@ -5,7 +5,7 @@ import { WebView } from 'react-native-webview';
 export default class app extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Biểu đồ huyết áp",
+            title: "Biểu đồ theo dõi tăng trưởng",
             headerStyle: {
                 backgroundColor: '#3F51B5',
             },
@@ -18,14 +18,9 @@ export default class app extends Component {
     };
     constructor(props) {
         super(props);
-
-
         this.state = {
-            data: [],
-            data2: []
+           maBn:''
         }
-
-
     }
     componentDidMount() {
         AsyncStorage.getItem('DATA_LOGIN', (err, result) => {
@@ -40,7 +35,7 @@ export default class app extends Component {
     }
     render() {
         return (
-            <WebView source={{ uri: 'https://hososuckhoedientuvietmy.vn/dang-ky-kham-benh/bieudohuyetapapp/?benhnhan=' + this.state.maBn }} />
+            <WebView source={{ uri: 'https://hososuckhoedientuvietmy.vn/dang-ky-kham-benh/bieudotheodoitangtruongapp/?benhnhan=' + this.state.maBn }} />
         )
 
     }

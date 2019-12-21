@@ -1,4 +1,4 @@
-package com.benh_vien;
+package com.benhvien;
 
 import android.app.Application;
 import android.content.Context;

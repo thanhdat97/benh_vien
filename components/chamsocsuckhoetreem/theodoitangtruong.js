@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Text, Dimensions, TextInput, Alert } from 'react-native';
-import Heading from "./../../Header";
+import { View, TouchableOpacity, Text, Dimensions, TextInput, Alert, ScrollView } from 'react-native';
 import styles from "./../css";
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
@@ -10,9 +9,19 @@ var strtotime = require('strtotime')
 var { width } = Dimensions.get("window");
 
 export default class MH_State extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Theo dõi tăng trưởng",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +38,7 @@ export default class MH_State extends Component {
         });
     }
     XL_Nhan() {
-        if (this.state.thangtuoi == ''||this.state.cannang=='') {
+        if (this.state.thangtuoi == '' || this.state.cannang == '') {
             Alert.alert(
                 'Thông báo lỗi',
                 'Bạn vui lòng nhập chỉ số huyết áp'
@@ -44,7 +53,7 @@ export default class MH_State extends Component {
                 body: JSON.stringify({
                     maBn: this.state.maBn,
                     thang: this.state.thangtuoi,
-                    canNang:this.state.cannang,
+                    canNang: this.state.cannang,
                     ngayud: strtotime(dateformat(new Date(), "yyyy-mm-dd HH:MM"))
                 })
             })
@@ -65,39 +74,37 @@ export default class MH_State extends Component {
         datenow.setDate(datenow.getDate() + 1)
         return (
             <View style={styles.container}>
-                <Heading />
-                <View style={styles.container_about}>
-                    <View style={styles.column_875}>
-                        <Text style={styles.text_877}>
-                            Chăm sóc sức khỏe trê em
+                <ScrollView>
+                    <View style={styles.container_about}>
+                        <View style={styles.column_875}>
+                            <Text style={styles.text_877}>
+                                Chăm sóc sức khỏe trê em => Theo dõi tăng trưởng
                         </Text>
-                        <Text style={styles.text_877}>
-                            Theo dõi tăng trưởng
-                        </Text>
-                        <View style={styles.flexstart}>
-                            <TextInput onChangeText={(thangtuoi) => this.setState({ thangtuoi })}
-                                value={this.state.thangtuoi} placeholder='Tháng tuổi' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
-                            <TextInput onChangeText={(cannang) => this.setState({ cannang })}
-                                value={this.state.cannang} placeholder='Cân nặng' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
-                            <View style={styles.row}>
-                                <View style={styles.linear2}>
-                                    <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
-                                            <Text style={styles.buttonText}>Cập Nhật</Text>
-                                        </LinearGradient>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={styles.linear2}>
-                                    <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
-                                            <Text style={styles.buttonText}>Xem lịch sử</Text>
-                                        </LinearGradient>
-                                    </TouchableOpacity>
+                            <View style={styles.flexstart}>
+                                <TextInput onChangeText={(thangtuoi) => this.setState({ thangtuoi })}
+                                    value={this.state.thangtuoi} placeholder='Tháng tuổi' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
+                                <TextInput onChangeText={(cannang) => this.setState({ cannang })}
+                                    value={this.state.cannang} placeholder='Cân nặng' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
+                                <View style={styles.row_linear_act}>
+                                    <View style={styles.linear2}>
+                                        <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
+                                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                                <Text style={styles.buttonText}>Cập Nhật</Text>
+                                            </LinearGradient>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={styles.linear2}>
+                                        <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
+                                            <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
+                                                <Text style={styles.buttonText}>Xem lịch sử</Text>
+                                            </LinearGradient>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </View>
                         </View>
                     </View>
-                </View>
+                </ScrollView>
             </View>
         );
     }

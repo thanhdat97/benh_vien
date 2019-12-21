@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity, Dimensions, Alert } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity, Dimensions, Alert, ScrollView } from 'react-native';
 import styles from './../css';
 import AsyncStorage from '@react-native-community/async-storage'
-import Information from './information'
+import Information from './information';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+import Heading from './../../Header'
+
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var { width } = Dimensions.get("window");
 
 class FlatListItem extends Component {
@@ -15,25 +20,31 @@ class FlatListItem extends Component {
 
     }
     XL_Chon() {
-        this.props.parentFlatList.refs.Th_Thong_tin.Mo_hop_thoaithongtin(this.props.item,this.props.navigation);
+        this.props.parentFlatList.refs.Th_Thong_tin.Mo_hop_thoaithongtin(this.props.item, this.props.navigation);
     }
     render() {
         return (
 
-            <View style={{ flex: 1, flexDirection: "column" }}>
-                <View style={{
-                    flex: 1, flexDirection: "row", backgroundColor: this.props.index % 2 == 0 ? "#fff" : "#fff"
-                }}>
-                    <Image style={styles.image_ql} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/hososuckhoe.png" }}></Image>
-                    <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5} style={styles.content}>
-                        <View style={{ flex: 1, height: 80, flexDirection: "column", justifyContent: 'center' }}>
-                            <Text style={styles.itemText}>Lần sinh thứ: {this.props.item.lanSinh}</Text>
-
-                        </View>
-                    </TouchableOpacity>
+            <View style={styles.container2}>
+                <View style={styles.container_about}>
+                    <View style={styles.column_875}>
+                        <Text style={styles.text_877}>
+                            Theo dõi sức khỏe phụ nữ => Theo dõi tăng trưởng
+                        </Text>
+                        <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
+                            <View style={styles.wrap_thongtinkhamchuabenh}>
+                                <View style={styles.icon_thongtinkhamchuabenh}>
+                                    <Icon name="filter_2" color="green" size={35} />
+                                </View>
+                                <Text style={styles.text_thongtinkhamchuabenh}>
+                                    Lần sinh thứ: {this.props.item.lanSinh}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 <View style={{ height: 1, backgroundColor: "#e6e5e5" }}></View>
-            </View>
+            </View >
         );
     }
 }
@@ -71,10 +82,7 @@ export default class Danh_sach_PH extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.inputContainer}>
-                    <Text style={styles.text_user}>Lần sinh</Text>
-                </View>
-
+                <Heading navigation={this.props.navigation} message={'Lần sinh'}/>
                 <View style={styles.container_about2}>
                     <FlatList
                         ref={'Danh_sach_ph'}

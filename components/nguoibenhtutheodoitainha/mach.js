@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Text, Dimensions, TextInput, Alert } from 'react-native';
-import Heading from "./../../Header";
+import { View, TouchableOpacity, Text, Dimensions, TextInput, Alert, ScrollView } from 'react-native';
 import styles from "./../css";
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
@@ -10,9 +9,19 @@ var strtotime=require('strtotime')
 var { width } = Dimensions.get("window");
 
 export default class MH_State extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Mạch",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -66,29 +75,26 @@ export default class MH_State extends Component {
         datenow.setDate(datenow.getDate() + 1)
         return (
             <View style={styles.container}>
-                <Heading />
+                <ScrollView>
                 <View style={styles.container_about}>
                     <View style={styles.column_875}>
                         <Text style={styles.text_877}>
-                           Người bệnh tự theo dõi tại nhà
-                        </Text>
-                        <Text style={styles.text_877}>
-                           Mạch
+                           Người bệnh tự theo dõi tại nhà => Mạch
                         </Text>
                         <View style={styles.flexstart}>
                             <TextInput onChangeText={(mach) => this.setState({ mach })}
                                 value={this.state.mach} placeholder='Mạch' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />
-                            <View style={styles.row}>
+                            <View style={styles.row_linear_act}>
                                 <View style={styles.linear2}>
                                     <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
+                                        <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
                                             <Text style={styles.buttonText}>Cập Nhật</Text>
                                         </LinearGradient>
                                     </TouchableOpacity>
                                 </View>
                                 <View style={styles.linear2}>
                                     <TouchableOpacity onPress={this.XL_Chon.bind(this)} activeOpacity={0.5}>
-                                        <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_327567}>
+                                        <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_327567act}>
                                             <Text style={styles.buttonText}>Xem lịch sử</Text>
                                         </LinearGradient>
                                     </TouchableOpacity>
@@ -96,7 +102,8 @@ export default class MH_State extends Component {
                             </View>
                         </View>
                     </View>
-                </View>
+                    </View>
+                </ScrollView>
             </View>
         );
     }

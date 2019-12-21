@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Dimensions, Alert } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Dimensions, Alert, ScrollView } from 'react-native';
 import styles from './../css';
 import AsyncStorage from '@react-native-community/async-storage'
 import { Table, Row } from 'react-native-table-component';
-import Heading from './../../Header'
 
 var { width } = Dimensions.get("window");
 
@@ -29,10 +28,20 @@ class FlatListItem extends Component {
 
 export default class Danh_sach_PH extends Component {
 
-    static navigationOptions = {
-        header: null
-    }
-
+    static navigationOptions = ({ navigation }) => {
+       
+        return {
+            title: "Thông tin tài chính",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props)
         this.state = {
@@ -63,37 +72,35 @@ export default class Danh_sach_PH extends Component {
         if (this.state.Danh_sach_ph.length != 0) {
             return (
                 <View style={styles.container}>
-                    <Heading />
-                    <View style={styles.container_about}>
-                        <View style={styles.column_875}>
-                            <Text style={styles.text_877}>
-                                Thông tin hành chính
+                    <ScrollView>
+                        <View style={styles.container_about}>
+                            <View style={styles.column_875}>
+                                <Text style={styles.text_877}>
+                                    Thông tin hành chính
                         </Text>
+                                <View style={styles.container_about2}>
+                                    <FlatList
+                                        ref={'Danh_sach_ph'}
+                                        data={this.state.Danh_sach_ph}
+                                        keyExtractor={(item) => item.key}
+                                        renderItem={({ item, index }) => {
 
-
-                            <View style={styles.container_about2}>
-                                <FlatList
-                                    ref={'Danh_sach_ph'}
-                                    data={this.state.Danh_sach_ph}
-                                    keyExtractor={(item) => item.key}
-                                    renderItem={({ item, index }) => {
-
-                                        return (
-                                            <TouchableOpacity activeOpacity={0.5}>
-                                                <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
-                                            </TouchableOpacity>
-                                        );
-                                    }}>
-                                </FlatList>
+                                            return (
+                                                <TouchableOpacity activeOpacity={0.5}>
+                                                    <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
+                                                </TouchableOpacity>
+                                            );
+                                        }}>
+                                    </FlatList>
+                                </View>
                             </View>
                         </View>
-                    </View>
+                    </ScrollView>
                 </View>
             );
         } else {
             return (
                 <View style={styles.container}>
-                    <Heading />
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>

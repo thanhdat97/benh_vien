@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { View, Image, TouchableOpacity, Text, TextInput, Alert, ImageBackground } from 'react-native';
-import Heading from "./../Header";
 import styles from "./css";
 import AsyncStorage from '@react-native-community/async-storage'
 import { Avatar } from 'react-native-elements';
-import Video from "react-native-video";
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import fontelloConfig from '../android/app/src/main/assets/selection.json';
 const Icon = createIconSetFromIcoMoon(fontelloConfig);
@@ -23,6 +21,7 @@ export default class MH_State extends Component {
             Nam_sinh: '',
             Ho_ten: ''
         }
+
         AsyncStorage.getItem('DATA_LOGIN', (err, result) => {
             if (result != null) {
                 let JSON_DATA = JSON.parse(result)
@@ -47,10 +46,11 @@ export default class MH_State extends Component {
                     }
 
                      ma_bn = 'BN' + chuoi + mang_bn[1];
-                    this.setState({ Ten_Dang_nhap: ma_bn })
                 }else{
                     ma_bn = this.state.Ten_Dang_nhap;
                 }
+                this.setState({ Ten_Dang_nhap: ma_bn })
+
                 fetch('http://27.72.76.115:8181/api/benh-nhan/get-one/' + ma_bn)
                 .then((response) => response.json())
                 .then((responseData) => {
@@ -72,7 +72,6 @@ export default class MH_State extends Component {
                     imageStyle={{ resizeMode: 'cover' }}
                 />
                 <View style={styles.view_image_login_dangnhap}>
-                    <Text style={styles.tieu_de_about}>Đăng nhập tài khoản</Text>
                     <View style={styles.view_image_login}>
                         <Avatar
                             rounded
@@ -92,7 +91,7 @@ export default class MH_State extends Component {
                             <View style={styles.wrap_icon_login}>
                                 <Icon name="user-solid-circle" color="#dcdcdc" size={27} />
                             </View>
-                            <TextInput onChangeText={(Ten_Dang_nhap) => this.setState({ Ten_Dang_nhap })} onSubmitEditing={this.changemabn.bind(this)}
+                            <TextInput onChangeText={(Ten_Dang_nhap) => this.setState({ Ten_Dang_nhap})} autoCapitalize="characters" onSubmitEditing={this.changemabn.bind(this)}
                                 value={this.state.Ten_Dang_nhap} placeholder='Mã định danh' style={styles.input_name_login} />
                         </View >
                         <View style={styles.wrap_icon_and_textinput_login}>
@@ -100,7 +99,7 @@ export default class MH_State extends Component {
                                 <Icon name="user-solid-circle" color="#dcdcdc" size={27} />
                             </View>
                             <TextInput editable={false}
-                                value={this.state.Ho_ten} placeholder='Họ Tên' style={styles.input_name_login} />
+                                value={this.state.Ho_ten} placeholder='Họ tên' style={styles.input_name_login} />
                         </View >
                         <View style={styles.wrap_icon_and_textinput_login}>
                             <View style={styles.wrap_icon_login}>
@@ -116,13 +115,16 @@ export default class MH_State extends Component {
                             <TextInput onFocus={this.changemabn.bind(this)} onChangeText={(Mat_khau) => this.setState({ Mat_khau })}
                                 value={this.state.Mat_khau} placeholder='Mật khẩu' style={styles.input_matkhau_login} secureTextEntry />
                         </View>
+
                         <TouchableOpacity onPress={this.XL_Nhan.bind(this)} activeOpacity={0.5}>
                             <View style={styles.button_dangnhap}>
                                 <Text style={styles.text_button_dangnhap}>Đăng nhập</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
-
+                    <View style={styles.wrap_icon_and_textinput_login3}>
+                            <Text style={{color:'#ffff',padding:10,fontSize:16,textAlign:'center'}}>* Bằng việc sử dụng phần mềm này, bạn đã đồng ý với các điều khoản đã được công bố tại Cơ sở y tế</Text>
+                    </View >
                 </View>
 
             </View>

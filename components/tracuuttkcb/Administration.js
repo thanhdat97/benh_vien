@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import styles from "./../css";
 import AsyncStorage from '@react-native-community/async-storage'
-import Heading from './../../Header'
 
 var dateformat = require('dateformat')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+       
+        return {
+            title: "Thông tin tài chính",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         let DT = this.props.navigation.state.params.DT;
@@ -52,49 +62,48 @@ export default class app extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading />
-
-                <View style={styles.container_about}>
-                    <View style={styles.column_875}>
-                        <Text style={styles.text_877}>
-                            Thông tin hành chính
+                <ScrollView>
+                    <View style={styles.container_about}>
+                        <View style={styles.column_875}>
+                            <Text style={styles.text_877}>
+                                Tra cứu thông tin khám chữa bệnh => Thông tin hành chính
                         </Text>
-                        <Text style={styles.text_877}>
-                            Ngày khám chữa bệnh: {this.state.ngayKham}
-                        </Text>
-                        <Text style={styles.text_875}>
-                            <Text style={styles.text_87}>
-                                Mã bênh nhân:
+                            <Text style={styles.text_877}>
+                                Ngày khám chữa bệnh: {this.state.ngayKham}
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Mã bênh nhân:
                              </Text>
-                            <Text> {this.state.Ma_bn}</Text>
-                        </Text>
-                        <Text style={styles.text_875}>
-                            <Text style={styles.text_87}>
-                                Họ và tên:
+                                <Text> {this.state.Ma_bn}</Text>
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Họ và tên:
                              </Text>
-                            <Text> {this.state.Ho_ten}</Text>
-                        </Text>
-                        <Text style={styles.text_875}>
-                            <Text style={styles.text_87}>
-                                Giới tính:
+                                <Text> {this.state.Ho_ten}</Text>
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Giới tính:
                              </Text>
-                            <Text> {this.state.gioiTinh}</Text>
-                        </Text>
-                        <Text style={styles.text_875}>
-                            <Text style={styles.text_87}>
-                                Địa chỉ:
+                                <Text> {this.state.gioiTinh}</Text>
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Địa chỉ:
                              </Text>
-                            <Text> {this.state.diaChi}</Text>
-                        </Text>
-                        <Text style={styles.text_875}>
-                            <Text style={styles.text_87}>
-                                Ngày sinh:
+                                <Text> {this.state.diaChi}</Text>
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Ngày sinh:
                              </Text>
-                            <Text> {this.state.ngaySinh}</Text>
-                        </Text>
+                                <Text> {this.state.ngaySinh}</Text>
+                            </Text>
+                        </View>
                     </View>
-                </View>
-
+                </ScrollView>
             </View>
         )
     }

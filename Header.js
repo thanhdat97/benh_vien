@@ -26,22 +26,6 @@ class MyCustomLeftComponent extends Component {
         );
     }
 }
-class MyCustomRightComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-
-    }
-    render() {
-        return (
-            <View>
-                <Icon name="home" color="#fff" size={35} />
-            </View>
-        );
-    }
-}
 class MyCustomCenterComponent extends Component {
     constructor(props) {
         super(props);
@@ -82,7 +66,6 @@ export default class Heading extends Component {
                 placement="left"
                 leftComponent={<MyCustomLeftComponent   navigation={this.props.navigation} />}
                 centerComponent={<MyCustomCenterComponent message={this.props.message} />}
-                rightComponent={<MyCustomRightComponent />}
             />
         )
     }

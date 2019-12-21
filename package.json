@@ -1,5 +1,5 @@
 {
-  "name": "benh_vien",
+  "name": "benhvien",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -30,6 +30,7 @@
     "react-native-linear-gradient": "^2.5.6",
     "react-native-modal": "^11.5.3",
     "react-native-modalbox": "^2.0.0",
+    "react-native-pure-chart": "0.0.24",
     "react-native-reanimated": "^1.4.0",
     "react-native-render-html": "^4.1.2",
     "react-native-select-two": "^1.0.6",

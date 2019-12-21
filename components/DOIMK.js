@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Alert, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Alert, Image, TouchableOpacity, ScrollView } from 'react-native';
 import styles from './css';
 import Heading from "./../Header";
 import LinearGradient from 'react-native-linear-gradient';
@@ -66,15 +66,15 @@ export default class Cap_nhat_Infomation extends Component {
                         Alert.alert(
                             'Thông báo',
                             'Cập nhật thành công', [
-                                {
-                                    text: "OK", onPress: () => {
-                                        this.setState({
-                                            Password: '',
-                                            Passwordnew: '',
-                                        })
-                                    }
+                            {
+                                text: "OK", onPress: () => {
+                                    this.setState({
+                                        Password: '',
+                                        Passwordnew: '',
+                                    })
                                 }
-                            ]
+                            }
+                        ]
                         )
 
                     }
@@ -91,57 +91,60 @@ export default class Cap_nhat_Infomation extends Component {
 
             <View style={styles.container}>
                 <Heading />
-                <View style={styles.column_information}>
-                    <View style={styles.view_image}>
-                        <Text style={styles.tieu_de_about}> Cập nhật mật khẩu</Text>
-                        <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/amvi.png"}}></Image>
-                    </View>
+                <ScrollView>
+                    <View style={styles.column_information}>
+                        <View style={styles.view_image}>
+                            <Text style={styles.tieu_de_about}> Cập nhật mật khẩu</Text>
+                            <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/amvi.png" }}></Image>
+                        </View>
 
-                    <View style={styles.container5}>
-                        <View style={styles.column2}>
-                            <Text style={styles.row}>
-                                <Text style={styles.text_875}>
-                                    <Text style={styles.text_87}>
-                                        Mã bênh nhân:
+                        <View style={styles.container5}>
+                            <View style={styles.column2}>
+                                <Text style={styles.row}>
+                                    <Text style={styles.text_8759}>
+                                        <Text style={styles.text_87}>
+                                            Mã bênh nhân:
                                  </Text>
-                                    <Text> {this.state.Ma_bn}</Text>
+                                        <Text> {this.state.Ma_bn}</Text>
+                                    </Text>
                                 </Text>
-                            </Text>
-                            <View style={styles.row}>
-                                <TextInput style={styles.textinput_modal}
-                                    placeholder='Nhập password cũ'
-                                    value={this.state.Password} secureTextEntry
-                                    onChangeText={(value) => { this.setState({ Password: value }) }}
-                                >
-                                </TextInput>
+                                <View style={styles.row}>
+                                    <TextInput style={styles.textinput_modal}
+                                        placeholder='Nhập password cũ'
+                                        value={this.state.Password} secureTextEntry
+                                        onChangeText={(value) => { this.setState({ Password: value }) }}
+                                    >
+                                    </TextInput>
+                                </View>
+                                <View style={styles.row}>
+                                    <TextInput style={styles.textinput_modal}
+                                        placeholder='Nhập password mới'
+                                        value={this.state.Passwordnew} secureTextEntry
+                                        onChangeText={(value) => { this.setState({ Passwordnew: value }) }}
+                                    >
+                                    </TextInput>
+                                </View>
+                                <View style={styles.row}>
+                                    <TextInput style={styles.textinput_modal}
+                                        placeholder='Nhập lại password mới'
+                                        value={this.state.Passwordnew2} secureTextEntry
+                                        onChangeText={(value) => { this.setState({ Passwordnew2: value }) }}
+                                    >
+                                    </TextInput>
+                                </View>
+                                <View style={styles.wrap_linear_hs_act}>
+                                    <TouchableOpacity onPress={this.Xu_ly_Cap_nhat.bind(this)} activeOpacity={0.5}>
+                                        <LinearGradient colors={['#3B69C7', '#3B69C7']} style={styles.linearGradient_32756}>
+                                            <Text style={styles.buttonText}>Cập Nhật</Text>
+                                        </LinearGradient>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
-                            <View style={styles.row}>
-                                <TextInput style={styles.textinput_modal}
-                                    placeholder='Nhập password mới'
-                                    value={this.state.Passwordnew} secureTextEntry
-                                    onChangeText={(value) => { this.setState({ Passwordnew: value }) }}
-                                >
-                                </TextInput>
-                            </View>
-                            <View style={styles.row}>
-                                <TextInput style={styles.textinput_modal}
-                                    placeholder='Nhập lại password mới'
-                                    value={this.state.Passwordnew2} secureTextEntry
-                                    onChangeText={(value) => { this.setState({ Passwordnew2: value }) }}
-                                >
-                                </TextInput>
-                            </View>
-                            <TouchableOpacity onPress={this.Xu_ly_Cap_nhat.bind(this)} activeOpacity={0.5}>
-                                <LinearGradient colors={['#97CAE5', '#3F51B5']} style={styles.linearGradient_32756}>
-                                    <Text style={styles.buttonText}>Cập Nhật</Text>
-                                </LinearGradient>
-                            </TouchableOpacity>
 
                         </View>
 
                     </View>
-
-                </View>
+                </ScrollView>
             </View>
         );
     }

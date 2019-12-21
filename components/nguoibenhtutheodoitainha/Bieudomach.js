@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import styles from "./../css";
-import Heading from './../../Header'
 import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'
 import { LineChart } from 'react-native-chart-kit';
 
 var dateformat = require('dateformat')
-var strtotime = require('strtotime')
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Biểu đồ mạch",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
 
@@ -55,7 +63,6 @@ export default class app extends Component {
         if (this.state.data.length != 0 && this.state.data2.length != 0) {
             return (
                 <View style={styles.container2}>
-                    <Heading />
                     <ScrollView>
                         <View style={styles.container_about}>
                             <View style={styles.column_875}>
@@ -101,7 +108,6 @@ export default class app extends Component {
         } else {
             return (
                 <View style={styles.container2}>
-                    <Heading />
                     <ScrollView>
                         <View style={styles.container_about}>
                             <View style={styles.column_875}>
