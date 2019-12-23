@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image,TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import AsyncStorage from '@react-native-community/async-storage'
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class app extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -78,11 +80,18 @@ export default class app extends Component {
             this.setState({tableData:tableData})
         })
     }
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
 
         return (
             <View style={styles.container2}>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about12}>
                         <View style={styles.column_875}>

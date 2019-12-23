@@ -5,7 +5,9 @@ import { Table, Row, Rows } from 'react-native-table-component';
 import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage'
 import LinearGradient from 'react-native-linear-gradient';
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class app extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -54,10 +56,18 @@ export default class app extends Component {
     XL_Chon() {
         this.props.navigation.navigate("Man_hinh_bieudoduongmau")
     }
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
 
         return (
             <View style={styles.container2}>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>

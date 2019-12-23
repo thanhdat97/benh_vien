@@ -1,140 +1,135 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import styles from "./../css";
+import styles from "./css";
 import { ScrollView } from 'react-native-gesture-handler';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+import fontelloConfig from './../android/app/src/main/assets/selection.json';
+import Heading from './../Header';
 const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class INFORAMTION extends Component {
-    static navigationOptions = ({ navigation }) => {
-
-        return {
-            title: "Thông tin Khám chữa bệnh",
-            headerStyle: {
-                backgroundColor: '#3F51B5',
-                zIndex: 0,
-            },
-            headerTintColor: '#ffffff',
-            headerTitleStyle: {
-                fontWeight: "bold",
-                fontSize: 18,
-            }
-        };
-    };
+    static navigationOptions = {
+        header: null
+    }
 
     constructor(props) {
         super(props);
-        let DT = this.props.navigation.state.params.DT;
 
-        this.state = {
-            maLanKham: DT.maLanKham,
-            ngayKham: dateformat(DT.ngayKham, 'dd/mm/yyyy HH:MM'),
-            item: DT,
-        }
 
     }
     XL_Chon() {
-        this.props.navigation.navigate("Man_hinh_Administration", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_ABOUT")
     }
     XL_Chon2() {
-        this.props.navigation.navigate("Man_hinh_Medical", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_DOIMK")
     }
     XL_Chon3() {
-        this.props.navigation.navigate("Man_hinh_DONTHUOC", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_Tracuuttkcb")
     }
     XL_Chon4() {
-        this.props.navigation.navigate("Man_hinh_KQXN", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_HSSKBD")
     }
     XL_Chon5() {
-        this.props.navigation.navigate("Man_hinh_CDHATDCN", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_DKKBTX")
     }
     XL_Chon6() {
-        this.props.navigation.navigate("Man_hinh_KQCP", { "DT": this.state.item })
+        this.props.navigation.navigate("Man_hinh_NBTTTN")
     }
     XL_Chon7() {
-        this.props.navigation.navigate("Man_hinh_chinh")
+        this.props.navigation.navigate("Man_hinh_CSSKTM")
+    }
+    XL_Chon8() {
+        this.props.navigation.navigate("Man_hinh_CSSPNCT")
     }
     render() {
 
         return (
             <View style={styles.container2}>
-                <View style={styles.go_back_home}>
-                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
-                        <Icon name="home" color="#3B69C7" size={35} />
-                    </TouchableOpacity>
-                </View>
+                <Heading navigation={this.props.navigation} />
+
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
-
-                            <Text style={styles.text_877}>
-                                Tra cứu thông tin khám chữa bệnh => Thông tin Khám chữa bệnh
-                            </Text>
-                            <Text style={styles.text_877}>
-                                Ngày khám chữa bệnh: {this.state.ngayKham}
-                            </Text>
                             <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
+                                        <Icon name="settings" color="green" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin hành chính
-                             </Text>
+                                        Thông tin cá nhân
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
+                                        <Icon name="lock" color="red" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin khám chữa bệnh
-                             </Text>
+                                        Đổi mật khẩu
+                                     </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon3.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="pil" color="green" size={35} />
+                                        <Icon name="search" color="green" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Đơn thuốc
-                             </Text>
+                                        Tra cứu khám chữa bệnh
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon4.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="beaker" color="green" size={35} />
+                                        <Icon name="paste" color="blue" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Kết quả xét nghiệm
-                             </Text>
+                                        Hồ sơ sức khỏe ban đầu
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon5.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="heartbeat" color="green" size={30} />
+                                        <Icon name="playlist_add_check" color="red" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Kết quả chuẩn đoán hình ảnh - Thăm dò chức năng
-                             </Text>
+                                        Đăng ký khám bệnh từ xa
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon6.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="tools-2" color="green" size={30} />
+                                        <Icon name="feed" color="blue" size={40} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Kết quả chụp phim
-                             </Text>
+                                        Người bệnh tự theo dõi tại nhà
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
-
+                            <TouchableOpacity onPress={this.XL_Chon7.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="health" color="green" size={40} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Chăm sóc sức khỏe trẻ em
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.XL_Chon8.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="health" color="green" size={40} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                        Chăm sóc sức khỏe phụ nữ có thai
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ScrollView>

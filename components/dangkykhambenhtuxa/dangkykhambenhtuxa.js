@@ -7,7 +7,9 @@ import RadioForm from 'react-native-simple-radio-button';
 import Select2 from 'react-native-select-two';
 import { IsEmail, Phonenumber } from './../../data/Dung_chung';
 import AsyncStorage from '@react-native-community/async-storage'
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var { width } = Dimensions.get("window");
 
 export default class MH_State extends Component {
@@ -96,12 +98,20 @@ export default class MH_State extends Component {
                 })
         }
     }
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
         let datenow = new Date();
         datenow.setDate(datenow.getDate() + 1)
         return (
             <View style={styles.container}>
                 <Heading navigation={this.props.navigation} message={'Đăng Ký Khám bệnh từ xa'}/>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>

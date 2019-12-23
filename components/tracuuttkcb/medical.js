@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import { ScrollView } from 'react-native-gesture-handler';
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class app extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -28,27 +30,27 @@ export default class app extends Component {
             ngayRa: '',
             soNgayDtri: '',
             tinhTrangRv: '',
-            Tenkhoa:'',
-            maBenh:'',
+            Tenkhoa: '',
+            maBenh: '',
             ngayKham: dateformat(DT.ngayKham, 'dd/mm/yyyy HH:MM'),
             maLankham: DT.maLanKham,
-            tenBenh:'',
-            maBenhkhac:'',
-            maThe:'',
-            gtTheTu:'',
-            gtTheDen:'',
-            tenbenhvien:''
+            tenBenh: '',
+            maBenhkhac: '',
+            maThe: '',
+            gtTheTu: '',
+            gtTheDen: '',
+            tenbenhvien: ''
         }
         fetch('http://27.72.76.115:8181/api/danh-muc/get-all-khoa')
-        .then((response) => response.json())
-        .then((responseData) => {
-            this.setState({Khoa:responseData})
-        })
+            .then((response) => response.json())
+            .then((responseData) => {
+                this.setState({ Khoa: responseData })
+            })
         fetch('http://27.72.76.115:8181/api/danh-muc/get-all-benh-vien')
-        .then((response) => response.json())
-        .then((responseData) => {
-            this.setState({Benhvien:responseData})
-        })
+            .then((response) => response.json())
+            .then((responseData) => {
+                this.setState({ Benhvien: responseData })
+            })
     }
     componentDidMount() {
         fetch('http://27.72.76.115:8181/api/lich-su-kham-benh/get-one/' + this.state.maLankham)
@@ -60,31 +62,38 @@ export default class app extends Component {
                     ngayRa: dateformat(responseData.ngayRa, 'dd/mm/yyyy HH:MM'),
                     soNgayDtri: responseData.soNgayDtri,
                     ketQuaDtri: responseData.ketQuaDtri,
-                    tinhTrangRv:responseData.tinhTrangRv,
-                    maBenh:responseData.maBenh,
-                    tenBenh:responseData.tenBenh,
-                    maBenhkhac:responseData.maBenhkhac,
-                    maThe:responseData.maThe,
-                    gtTheTu:dateformat(responseData.gtTheTu,'dd/mm/yyyy'),
-                    gtTheDen:dateformat(responseData.gtTheDen,'dd/mm/yyyy'),
+                    tinhTrangRv: responseData.tinhTrangRv,
+                    maBenh: responseData.maBenh,
+                    tenBenh: responseData.tenBenh,
+                    maBenhkhac: responseData.maBenhkhac,
+                    maThe: responseData.maThe,
+                    gtTheTu: dateformat(responseData.gtTheTu, 'dd/mm/yyyy'),
+                    gtTheDen: dateformat(responseData.gtTheDen, 'dd/mm/yyyy'),
                 })
-                this.state.Khoa.forEach(element=>{
-                    if(element.ma == responseData.maKhoa){
-                        this.setState({Tenkhoa:element.ten})
+                this.state.Khoa.forEach(element => {
+                    if (element.ma == responseData.maKhoa) {
+                        this.setState({ Tenkhoa: element.ten })
                     }
                 })
-                this.state.Benhvien.forEach(element=>{
-                    if(element.ma == responseData.maDkbd){
-                        this.setState({tenbenhvien:element.ten})
+                this.state.Benhvien.forEach(element => {
+                    if (element.ma == responseData.maDkbd) {
+                        this.setState({ tenbenhvien: element.ten })
                     }
                 })
             })
     }
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
 
         return (
             <View style={styles.container2}>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
@@ -132,13 +141,13 @@ export default class app extends Component {
                             </Text>
                             <Text style={styles.text_875}>
                                 <Text style={styles.text_87}>
-                                     Khoa điều trị:
+                                    Khoa điều trị:
                                 </Text>
                                 <Text> {this.state.Tenkhoa}</Text>
                             </Text>
                             <Text style={styles.text_875}>
                                 <Text style={styles.text_87}>
-                                     Mã bệnh chính:
+                                    Mã bệnh chính:
                                 </Text>
                                 <Text> {this.state.maBenh}</Text>
                             </Text>

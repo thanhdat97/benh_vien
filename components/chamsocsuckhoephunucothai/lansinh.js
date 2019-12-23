@@ -78,30 +78,55 @@ export default class Danh_sach_PH extends Component {
         })
     }
 
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
-        return (
-            <View style={styles.container}>
-                <Heading navigation={this.props.navigation} message={'Lần sinh'}/>
-                <View style={styles.container_about2}>
-                    <FlatList
-                        ref={'Danh_sach_ph'}
-                        data={this.state.Danh_sach_ph}
-                        keyExtractor={(item) => item.lanSinh}
-                        renderItem={({ item, index }) => {
+        if (this.state.Danh_sach_ph != 0) {
+            return (
+                <View style={styles.container}>
+                    <Heading navigation={this.props.navigation} message={'Lần sinh'} />
+                    <View style={styles.go_back_home}>
+                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                            <Icon name="home" color="#3B69C7" size={35} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.container_about2}>
+                        <FlatList
+                            ref={'Danh_sach_ph'}
+                            data={this.state.Danh_sach_ph}
+                            keyExtractor={(item) => item.lanSinh}
+                            renderItem={({ item, index }) => {
 
-                            return (
-                                <TouchableOpacity activeOpacity={0.5}>
-                                    <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
-                                </TouchableOpacity>
-                            );
-                        }}>
-                    </FlatList>
-                    <Information ref={'Th_Thong_tin'} parentFlatList={this}></Information>
+                                return (
+                                    <TouchableOpacity activeOpacity={0.5}>
+                                        <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
+                                    </TouchableOpacity>
+                                );
+                            }}>
+                        </FlatList>
+                        <Information ref={'Th_Thong_tin'} parentFlatList={this}></Information>
 
+                    </View>
                 </View>
-            </View>
-        );
+            );
+        } else {
+            return (
+                <View style={styles.container}>
+                    <Heading navigation={this.props.navigation} message={'Lần sinh'} />
+                    <View style={styles.go_back_home}>
+                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                            <Icon name="home" color="#3B69C7" size={35} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.column_875}>
+                        <Text style={styles.text_877}>
+                           Hiện không có thông tin
+                        </Text>
+                    </View>
+                </View>
+            );
+        }
     }
 }
 

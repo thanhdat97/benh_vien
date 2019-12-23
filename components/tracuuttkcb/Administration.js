@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from "./../css";
 import AsyncStorage from '@react-native-community/async-storage'
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 export default class app extends Component {
     static navigationOptions = ({ navigation }) => {
-       
+
         return {
             title: "Thông tin tài chính",
             headerStyle: {
@@ -57,17 +59,25 @@ export default class app extends Component {
                 })
         })
     }
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
 
         return (
             <View style={styles.container2}>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
                                 Tra cứu thông tin khám chữa bệnh => Thông tin hành chính
-                        </Text>
+                            </Text>
+
                             <Text style={styles.text_877}>
                                 Ngày khám chữa bệnh: {this.state.ngayKham}
                             </Text>

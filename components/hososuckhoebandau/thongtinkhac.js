@@ -3,7 +3,9 @@ import { View, Text, FlatList, TouchableOpacity, Dimensions, Alert, ScrollView }
 import styles from './../css';
 import AsyncStorage from '@react-native-community/async-storage'
 import { Table, Row } from 'react-native-table-component';
-
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var { width } = Dimensions.get("window");
 
 class FlatListItem extends Component {
@@ -44,9 +46,9 @@ class FlatListItem extends Component {
 
 export default class Danh_sach_PH extends Component {
 
-   
+
     static navigationOptions = ({ navigation }) => {
-       
+
         return {
             title: "Thông tin khác",
             headerStyle: {
@@ -84,12 +86,19 @@ export default class Danh_sach_PH extends Component {
                 })
         })
     }
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
 
     render() {
         if (this.state.Danh_sach_ph.length != 0) {
             return (
                 <View style={styles.container}>
+                    <View style={styles.go_back_home}>
+                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                            <Icon name="home" color="#3B69C7" size={35} />
+                        </TouchableOpacity>
+                    </View>
                     <ScrollView>
                         <View style={styles.container_about}>
                             <View style={styles.column_875}>
@@ -121,6 +130,11 @@ export default class Danh_sach_PH extends Component {
         } else {
             return (
                 <View style={styles.container}>
+                    <View style={styles.go_back_home}>
+                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                            <Icon name="home" color="#3B69C7" size={35} />
+                        </TouchableOpacity>
+                    </View>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>

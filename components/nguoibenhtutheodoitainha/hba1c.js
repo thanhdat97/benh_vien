@@ -3,6 +3,9 @@ import { View, TouchableOpacity, Text, Dimensions, TextInput, Alert, ScrollView 
 import styles from "./../css";
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import fontelloConfig from '../../android/app/src/main/assets/selection.json';
+const Icon = createIconSetFromIcoMoon(fontelloConfig);
 var dateformat = require('dateformat')
 var strtotime = require('strtotime')
 
@@ -67,9 +70,17 @@ export default class MH_State extends Component {
     XL_Chon() {
         this.props.navigation.navigate("Man_hinh_historyhba1c")
     }
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
         return (
             <View style={styles.container}>
+                <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <ScrollView>
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>

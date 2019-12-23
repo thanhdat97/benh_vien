@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         height: height,
     },
 
+
     wrap_dangnhap: {
         height: "48%",
         backgroundColor: "#fff",
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
         marginRight: "7%",
         borderRadius: 5,
         zIndex: 0,
-        paddingTop:5
+        paddingTop: 5
     },
     view_image_login_dangnhap: {
         marginBottom: 30,
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
         width: "100%",
         paddingLeft: 15,
         color: "#000",
-        
+
     },
     input_matkhau_login: {
         width: "100%",
@@ -460,7 +461,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     scroll_table: {
-       
+
 
     },
     modal: {
@@ -471,6 +472,12 @@ const styles = StyleSheet.create({
         paddingBottom: 15,
         paddingLeft: 10,
         paddingRight: 10,
+    },
+    go_back_home: {
+        position: "absolute",
+        zIndex: 1,
+        bottom: 5,
+        right: 10,
     },
 
 

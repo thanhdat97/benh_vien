@@ -90,7 +90,7 @@ export default class Cap_nhat_Infomation extends Component {
         return (
 
             <View style={styles.container}>
-                <Heading />
+                <Heading navigation={this.props.navigation} message={'Đổi mật khẩu'}/>
                 <ScrollView>
                     <View style={styles.column_information}>
                         <View style={styles.view_image}>

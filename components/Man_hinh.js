@@ -15,6 +15,8 @@ import CSSPNCT from './chamsocsuckhoephunucothai/list';
 import styles from './css';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import fontelloConfig from '../android/app/src/main/assets/selection.json';
+import Man_hinh_chinh from './Man_hinh_chinh';
+
 const Icon = createIconSetFromIcoMoon(fontelloConfig);
 
 import { Container, Content, Header, Body, Footer } from 'native-base';
@@ -35,14 +37,24 @@ const CustomNavigator = (props) => (
       <Body style={styles.body_wrap_footer_customize}>
         <View style={styles.wrap_footer_customize}>
           <Text style={styles.text_footer_customize}>Y BA ĐIỆN TỬ VIỆT MỸ </Text>
-          <Text style={styles.text_footer_customize_version}>(Phiên bản: 5.0.0)</Text>
+          <Text style={styles.text_footer_customize_version}>(Phiên bản: 1.0.0)</Text>
         </View>
       </Body>
     </Footer>
   </Container>
 )
 const routeConfigs = {
-
+  Man_hinh_chinh: {
+    screen: Man_hinh_chinh,
+    navigationOptions: {
+      drawerLabel: "Trang Chủ",
+      drawerIcon: ({ }) => (
+        <View>
+          <Icon name="home" color="green" size={20} />
+        </View>
+      ),
+    }
+  },
   Man_hinh_ABOUT: {
     screen: ABOUT,
     navigationOptions: {
@@ -149,7 +161,7 @@ const routeConfigs = {
 
 const drawerNavigatorConfig = {
 
-  initialRouteName: "Man_hinh_ABOUT",
+  initialRouteName: "Man_hinh_chinh",
   contentComponent: CustomNavigator,
   drawerWidth: "90%",
   drawerPosition: "left",
