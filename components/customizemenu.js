@@ -31,8 +31,7 @@ export default class Main extends Component {
     return (
       <View style={styles.view_image}>
         <Image style={styles.image2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/AMV.png"}}></Image>
-        <Text style={styles.text_name_user_in_navi_customize}>{this.state.Ho_ten}</Text>
-        <Text style={styles.text_name_user_in_navi_customize_for_code}>Mã số: {this.state.Ma_bn}</Text>
+        <Text style={styles.text_name_user_in_navi_customize}>Người bệnh: {this.state.Ho_ten} ({this.state.Ma_bn})</Text>
       </View>
     )
   }
