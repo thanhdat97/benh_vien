@@ -106,7 +106,7 @@ export default class MH_State extends Component {
         datenow.setDate(datenow.getDate() + 1)
         return (
             <View style={styles.container}>
-                <Heading navigation={this.props.navigation} message={'Đăng Ký Khám bệnh từ xa'}/>
+                <Heading navigation={this.props.navigation} message={'ĐĂNG KÝ KHÁM BỆNH TỪ XA'}/>
                 <View style={styles.go_back_home}>
                     <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
                         <Icon name="home" color="#3B69C7" size={35} />

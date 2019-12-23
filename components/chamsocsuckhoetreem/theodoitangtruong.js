@@ -89,8 +89,8 @@ export default class MH_State extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Chăm sóc sức khỏe trê em => Theo dõi tăng trưởng
-                        </Text>
+                               Theo dõi tăng trưởng
+                            </Text>
                             <View style={styles.flexstart}>
                                 <TextInput onChangeText={(thangtuoi) => this.setState({ thangtuoi })}
                                     value={this.state.thangtuoi} placeholder='Tháng tuổi' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />

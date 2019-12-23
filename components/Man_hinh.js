@@ -25,7 +25,7 @@ const CustomNavigator = (props) => (
   <Container>
     <Header style={styles.header_customize}>
       <Body style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <View style={{ flexDirection: 'column' }}>
+        <View style={{ flexDirection: 'column', }}>
           <Menu />
         </View>
       </Body>

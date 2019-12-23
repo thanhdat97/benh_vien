@@ -37,7 +37,7 @@ export default class INFORAMTION extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Theo dõi sức khỏe trẻ em => Theo dõi tăng trưởng
+                                Theo dõi tăng trưởng
                              </Text>
                             <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>

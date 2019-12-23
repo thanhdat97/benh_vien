@@ -14,7 +14,7 @@ var { width } = Dimensions.get("window");
 export default class MH_State extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Đường máu",
+            title: "ĐƯỜNG MÁU",
             headerStyle: {
                 backgroundColor: '#3F51B5',
             },
@@ -87,8 +87,8 @@ export default class MH_State extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Người bệnh tự theo dõi tại nhà => Đường máu
-                        </Text>
+                                ĐƯỜNG MÁU
+                           </Text>
                             <View style={styles.flexstart}>
                                 <TextInput onChangeText={(duongmau) => this.setState({ duongmau })}
                                     value={this.state.duongmau} placeholder='Đường máu' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />

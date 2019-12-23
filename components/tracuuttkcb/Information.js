@@ -10,7 +10,7 @@ export default class INFORAMTION extends Component {
     static navigationOptions = ({ navigation }) => {
 
         return {
-            title: "Thông tin Khám chữa bệnh",
+            title: "THÔNG TIN KHÁM CHỮA BỆNH",
             headerStyle: {
                 backgroundColor: '#3F51B5',
                 zIndex: 0,
@@ -34,9 +34,7 @@ export default class INFORAMTION extends Component {
         }
 
     }
-    XL_Chon() {
-        this.props.navigation.navigate("Man_hinh_Administration", { "DT": this.state.item })
-    }
+
     XL_Chon2() {
         this.props.navigation.navigate("Man_hinh_Medical", { "DT": this.state.item })
     }
@@ -74,16 +72,7 @@ export default class INFORAMTION extends Component {
                             <Text style={styles.text_877}>
                                 Ngày khám chữa bệnh: {this.state.ngayKham}
                             </Text>
-                            <TouchableOpacity onPress={this.XL_Chon.bind(this)}>
-                                <View style={styles.wrap_thongtinkhamchuabenh}>
-                                    <View style={styles.icon_thongtinkhamchuabenh}>
-                                        <Icon name="information" color="green" size={35} />
-                                    </View>
-                                    <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Thông tin hành chính
-                             </Text>
-                                </View>
-                            </TouchableOpacity>
+                           
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
                                 <View style={styles.wrap_thongtinkhamchuabenh}>
                                     <View style={styles.icon_thongtinkhamchuabenh}>
@@ -120,7 +109,7 @@ export default class INFORAMTION extends Component {
                                         <Icon name="heartbeat" color="green" size={30} />
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
-                                        Kết quả chuẩn đoán hình ảnh - Thăm dò chức năng
+                                        Kết quả chẩn đoán hình ảnh - Thăm dò chức năng
                              </Text>
                                 </View>
                             </TouchableOpacity>

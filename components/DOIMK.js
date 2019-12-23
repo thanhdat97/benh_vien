@@ -94,20 +94,13 @@ export default class Cap_nhat_Infomation extends Component {
                 <ScrollView>
                     <View style={styles.column_information}>
                         <View style={styles.view_image}>
-                            <Text style={styles.tieu_de_about}> Cập nhật mật khẩu</Text>
+                            <Text style={styles.tieu_de_about}> CẬP NHẬT MẬT KHẨU</Text>
                             <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/amvi.png" }}></Image>
                         </View>
 
                         <View style={styles.container5}>
                             <View style={styles.column2}>
-                                <Text style={styles.row}>
-                                    <Text style={styles.text_8759}>
-                                        <Text style={styles.text_87}>
-                                            Mã bênh nhân:
-                                 </Text>
-                                        <Text> {this.state.Ma_bn}</Text>
-                                    </Text>
-                                </Text>
+                                
                                 <View style={styles.row}>
                                     <TextInput style={styles.textinput_modal}
                                         placeholder='Nhập password cũ'

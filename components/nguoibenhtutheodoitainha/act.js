@@ -16,7 +16,7 @@ var { width } = Dimensions.get("window");
 export default class MH_State extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Test ACT",
+            title: "TEST ACT",
             headerStyle: {
                 backgroundColor: '#3F51B5',
             },
@@ -128,7 +128,7 @@ export default class MH_State extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Người bệnh tự theo dõi tại nhà => Test ACT
+                                TEST ACT
                             </Text>
                             <View style={styles.flexstart}>
                                 <Text style={styles.text_87712}>

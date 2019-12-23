@@ -84,7 +84,7 @@ export default class Danh_sach_PH extends Component {
     render() {
         return (
             <View style={styles.container}>
-              <Heading navigation={this.props.navigation} message={'Tra cứu khám chữa bệnh'}/>
+              <Heading navigation={this.props.navigation} message={'LỊCH SỬ KHÁM CHỮA BỆNH'}/>
 
                 <View style={styles.container_about2}>
                     <FlatList

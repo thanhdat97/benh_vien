@@ -69,11 +69,11 @@ export default class app extends Component {
 
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Thông tin cá nhân
+                                THÔNG TIN CÁ NHÂN
                         </Text>
                             <Text style={styles.text_875}>
                                 <Text style={styles.text_87}>
-                                    Mã bênh nhân:
+                                    Mã định danh:
                              </Text>
                                 <Text> {this.state.Ma_bn}</Text>
                             </Text>
@@ -82,6 +82,12 @@ export default class app extends Component {
                                     Họ và tên:
                              </Text>
                                 <Text> {this.state.Ho_ten}</Text>
+                            </Text>
+                            <Text style={styles.text_875}>
+                                <Text style={styles.text_87}>
+                                    Ngày sinh:
+                                </Text>
+                                <Text> {this.state.ngaySinh}</Text>
                             </Text>
                             <Text style={styles.text_875}>
                                 <Text style={styles.text_87}>
@@ -95,12 +101,7 @@ export default class app extends Component {
                              </Text>
                                 <Text> {this.state.diaChi}</Text>
                             </Text>
-                            <Text style={styles.text_875}>
-                                <Text style={styles.text_87}>
-                                    Ngày sinh:
-                             </Text>
-                                <Text> {this.state.ngaySinh}</Text>
-                            </Text>
+
                         </View>
 
                     </View>

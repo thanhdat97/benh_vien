@@ -63,7 +63,7 @@ export default class Danh_sach_PH extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Danh_sach_ph: [],
+            Danh_sach_ph: '',
         }
     }
 
@@ -89,60 +89,64 @@ export default class Danh_sach_PH extends Component {
         this.props.navigation.navigate("Man_hinh_chinh")
     }
     render() {
-        if (this.state.Danh_sach_ph.length != 0) {
-            return (
-                <View style={styles.container}>
-                    <View style={styles.go_back_home}>
-                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
-                            <Icon name="home" color="#3B69C7" size={35} />
-                        </TouchableOpacity>
+        if (this.state.Danh_sach_ph != '') {
+            if (this.state.Danh_sach_ph.length != 0) {
+                return (
+                    <View style={styles.container}>
+                        <View style={styles.go_back_home}>
+                            <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                                <Icon name="home" color="#3B69C7" size={35} />
+                            </TouchableOpacity>
+                        </View>
+                        <ScrollView>
+                            <View style={styles.container_about}>
+                                <View style={styles.column_875}>
+                                    <Text style={styles.text_877}>
+                                        Thông tin súc khỏe sinh sản
+                                    </Text>
+                                    <View style={styles.container_about2}>
+                                        <FlatList
+                                            ref={'Danh_sach_ph'}
+                                            data={this.state.Danh_sach_ph}
+                                            keyExtractor={(item) => item.key}
+                                            renderItem={({ item, index }) => {
+
+                                                return (
+                                                    <TouchableOpacity activeOpacity={0.5}>
+                                                        <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
+                                                    </TouchableOpacity>
+                                                );
+                                            }}>
+                                        </FlatList>
+                                    </View>
+                                </View>
+                            </View>
+                        </ScrollView>
                     </View>
-                    <ScrollView>
+                );
+            } else {
+                return (
+                    <View style={styles.container}>
+                        <View style={styles.go_back_home}>
+                            <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                                <Icon name="home" color="#3B69C7" size={35} />
+                            </TouchableOpacity>
+                        </View>
                         <View style={styles.container_about}>
                             <View style={styles.column_875}>
                                 <Text style={styles.text_877}>
                                     Thông tin súc khỏe sinh sản
-                        </Text>
-                                <View style={styles.container_about2}>
-                                    <FlatList
-                                        ref={'Danh_sach_ph'}
-                                        data={this.state.Danh_sach_ph}
-                                        keyExtractor={(item) => item.key}
-                                        renderItem={({ item, index }) => {
-
-                                            return (
-                                                <TouchableOpacity activeOpacity={0.5}>
-                                                    <FlatListItem item={item} index={index} navigation={this.props.navigation} parentFlatList={this}></FlatListItem>
-                                                </TouchableOpacity>
-                                            );
-                                        }}>
-                                    </FlatList>
-                                </View>
+                            </Text>
+                                <Text style={styles.text_877}>
+                                    Hiện không có thông tin
+                            </Text>
                             </View>
                         </View>
-                    </ScrollView>
-                </View>
-            );
+                    </View>
+                );
+            }
         } else {
-            return (
-                <View style={styles.container}>
-                    <View style={styles.go_back_home}>
-                        <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
-                            <Icon name="home" color="#3B69C7" size={35} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.container_about}>
-                        <View style={styles.column_875}>
-                            <Text style={styles.text_877}>
-                                Thông tin súc khỏe sinh sản
-                            </Text>
-                            <Text style={styles.text_877}>
-                                Hiện không có thông tin
-                            </Text>
-                        </View>
-                    </View>
-                </View>
-            );
+            return null
         }
     }
 }

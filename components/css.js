@@ -451,7 +451,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text2: { textAlign: 'center', color: 'white' },
-    text: { textAlign: 'center' },
+    text: { textAlign: 'left' },
     tieu_de_footer: {
         fontSize: 18,
         textAlign: 'center',
@@ -517,8 +517,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
     },
     text_name_user_in_navi_customize: {
-        fontSize: 18,
-        fontWeight: "bold",
+        textAlign: "center",
+        fontSize:14,
     },
     body_wrap_footer_customize: {
         textAlign: "center",
@@ -527,10 +527,7 @@ const styles = StyleSheet.create({
     wrap_footer_customize: {
         justifyContent: "center",
     },
-    text_name_user_in_navi_customize: {
-        textAlign: "center",
 
-    },
     text_footer_customize_version: {
         textAlign: "center",
     },

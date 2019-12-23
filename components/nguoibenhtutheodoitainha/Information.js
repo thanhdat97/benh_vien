@@ -42,7 +42,7 @@ export default class INFORAMTION extends Component {
 
         return (
             <View style={styles.container2}>
-                <Heading navigation={this.props.navigation} message={'Người bệnh tự theo dõi tại nhà'}/>
+                <Heading navigation={this.props.navigation} message={'NGƯỜI BỆNH TỰ THEO DÕI TẠI NHÀ'}/>
                 <View style={styles.go_back_home}>
                     <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
                         <Icon name="home" color="#3B69C7" size={35} />
@@ -61,7 +61,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Mạch
-                             </Text>
+                                     </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>

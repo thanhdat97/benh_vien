@@ -13,7 +13,7 @@ var strtotime = require('strtotime')
 export default class MH_State extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: "Huyết áp",
+            title: "HUYẾT ÁP",
             headerStyle: {
                 backgroundColor: '#3F51B5',
             },
@@ -88,8 +88,8 @@ export default class MH_State extends Component {
                     <View style={styles.container_about}>
                         <View style={styles.column_875}>
                             <Text style={styles.text_877}>
-                                Người bệnh tự theo dõi tại nhà => Huyết áp
-                        </Text>
+                                 HUYẾT ÁP
+                            </Text>
                             <View style={styles.flexstart}>
                                 <TextInput onChangeText={(huyetaptoithieu) => this.setState({ huyetaptoithieu })}
                                     value={this.state.huyetaptoithieu} placeholder='Huyết áp tối thiếu' underlineColorAndroid='transparent' keyboardType={'numeric'} style={styles.input} />

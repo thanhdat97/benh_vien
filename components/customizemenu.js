@@ -13,25 +13,26 @@ export default class Main extends Component {
   }
   componentDidMount() {
     AsyncStorage.getItem('DATA_LOGIN', (err, result) => {
-        let JSON_DATA = JSON.parse(result)
-        this.setState({
-            Ma_bn:'( '+JSON_DATA.maBn+' )'
-        })
-        fetch('http://27.72.76.115:8181/api/benh-nhan/get-one/'+JSON_DATA.maBn)
+      let JSON_DATA = JSON.parse(result)
+      this.setState({
+        Ma_bn: '( ' + JSON_DATA.maBn + ' )'
+      })
+      fetch('http://27.72.76.115:8181/api/benh-nhan/get-one/' + JSON_DATA.maBn)
         .then((response) => response.json())
         .then((responseData) => {
-           this.setState({
-               Ho_ten:responseData.hoTen,
-              
-           })
+          this.setState({
+            Ho_ten: responseData.hoTen,
+
+          })
         })
     })
-}
+  }
   render() {
     return (
       <View style={styles.view_image}>
-        <Image style={styles.image2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/AMV.png"}}></Image>
-        <Text style={styles.text_name_user_in_navi_customize}>Người bệnh: {this.state.Ho_ten} ({this.state.Ma_bn})</Text>
+        <Image style={styles.image2} resizeMode='cover' source={{ uri: "https://benhvienvietmy.herokuapp.com/AMV.png" }}></Image>
+          <Text style={styles.text_name_user_in_navi_customize}>{this.state.Ho_ten}</Text>
+          <Text style={styles.text_name_user_in_navi_customize_for_code}> {this.state.Ma_bn}</Text>
       </View>
     )
   }
