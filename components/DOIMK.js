@@ -6,6 +6,19 @@ import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-community/async-storage'
 
 export default class Cap_nhat_Infomation extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "CẬP NHẬT MẬT KHẨU",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -90,11 +103,9 @@ export default class Cap_nhat_Infomation extends Component {
         return (
 
             <View style={styles.container}>
-                <Heading navigation={this.props.navigation} message={'Đổi mật khẩu'}/>
                 <ScrollView>
                     <View style={styles.column_information}>
                         <View style={styles.view_image}>
-                            <Text style={styles.tieu_de_about}> CẬP NHẬT MẬT KHẨU</Text>
                             <Image style={styles.image} resizeMode='contain' source={{ uri: "https://benhvienvietmy.herokuapp.com/amvi.png" }}></Image>
                         </View>
 

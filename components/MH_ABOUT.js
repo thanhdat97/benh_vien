@@ -5,9 +5,19 @@ import styles from "./css";
 import MH_ABOUT_INFORMATION from './MH_ABOUT_INFORMATION'
 
 export default class app extends Component {
-    static navigationOptions = {
-        header: null
-    }
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: "Thông tin cá nhân",
+            headerStyle: {
+                backgroundColor: '#3F51B5',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 18
+            }
+        };
+    };
     constructor(props) {
         super(props);
 
@@ -30,7 +40,6 @@ export default class app extends Component {
         
         return (
             <View style={styles.container}>
-                <Heading message={'Thông tin cá nhân'} navigation={this.props.navigation}/>
                 <MH_ABOUT_INFORMATION />
             </View>
         )

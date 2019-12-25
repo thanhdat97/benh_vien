@@ -80,12 +80,18 @@ export default class Danh_sach_PH extends Component {
         })
     }
 
-
+    XL_Chon7() {
+        this.props.navigation.navigate("Man_hinh_chinh")
+    }
     render() {
         return (
             <View style={styles.container}>
               <Heading navigation={this.props.navigation} message={'LỊCH SỬ KHÁM CHỮA BỆNH'}/>
-
+              <View style={styles.go_back_home}>
+                    <TouchableOpacity onPress={this.XL_Chon7.bind(this)} activeOpacity={0.5}>
+                        <Icon name="home" color="#3B69C7" size={35} />
+                    </TouchableOpacity>
+                </View>
                 <View style={styles.container_about2}>
                     <FlatList
                         ref={'Danh_sach_ph'}

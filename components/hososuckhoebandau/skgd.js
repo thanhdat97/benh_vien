@@ -65,7 +65,7 @@ export default class Danh_sach_PH extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Danh_sach_ph: '',
+            Danh_sach_ph: null,
         }
     }
 
@@ -82,6 +82,10 @@ export default class Danh_sach_PH extends Component {
                         this.setState({
                             Danh_sach_ph: responseData
                         })
+                    }else{
+                        this.setState({
+                            Danh_sach_ph:[]
+                        })
                     }
                 })
         })
@@ -91,7 +95,7 @@ export default class Danh_sach_PH extends Component {
     }
 
     render() {
-        if (this.state.Danh_sach_ph != '') {
+        if (this.state.Danh_sach_ph != null) {
             if (this.state.Danh_sach_ph.length != 0) {
                 return (
                     <View style={styles.container}>
@@ -105,7 +109,7 @@ export default class Danh_sach_PH extends Component {
                                 <View style={styles.column_875}>
                                     <Text style={styles.text_877}>
                                         Thông tin súc khỏe gia đình
-                            </Text>
+                                    </Text>
 
                                     <View style={styles.container_about2}>
                                         <FlatList
@@ -140,7 +144,7 @@ export default class Danh_sach_PH extends Component {
                             <View style={styles.column_875}>
                                 <Text style={styles.text_877}>
                                     Thông tin súc khỏe gia đình
-                            </Text>
+                                </Text>
                                 <Text style={styles.text_877}>
                                     Hiện không có thông tin
                             </Text>

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Dimensions, Image, View, Text } from 'react-native';
-import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
-import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
+import { createAppContainer } from 'react-navigation';
 import ABOUT from './MH_ABOUT';
 import Logout from './logout';
 import DOIMK from './DOIMK';
@@ -46,114 +46,52 @@ const CustomNavigator = (props) => (
 const routeConfigs = {
   Man_hinh_chinh: {
     screen: Man_hinh_chinh,
-    navigationOptions: {
-      drawerLabel: "Trang Chủ",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="home" color="green" size={20} />
-        </View>
-      ),
-    }
   },
   Man_hinh_ABOUT: {
     screen: ABOUT,
-    navigationOptions: {
-      drawerLabel: "Thông tin cá nhân",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="settings" color="green" size={20} />
-        </View>
-      ),
-    }
   },
   Man_hinh_DOIMK: {
     screen: DOIMK,
-    navigationOptions: {
-      drawerLabel: "Đổi mật khẩu",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="lock" color="red" size={20} />
-        </View>
-      ),
-    }
   },
   Man_hinh_Tracuuttkcb: {
     screen: Tracuuttkcb,
     navigationOptions: {
-      drawerLabel: "Tra cứu khám chữa bệnh",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="search" color="green" size={20} />
-        </View>
-      ),
+      header: null
     }
   },
   Man_hinh_HSSKBD: {
     screen: HSSKBD,
     navigationOptions: {
-      drawerLabel: "Hồ sơ sức khỏe ban đầu",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="paste" color="blue" size={25} />
-        </View>
-      ),
+      header: null
     }
   },
   Man_hinh_DKKBTX: {
     screen: DKKBTX,
-    navigationOptions: {
-      drawerLabel: "Đăng ký khám bệnh từ xa",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="playlist_add_check" color="red" size={25} />
-        </View>
-      ),
-    }
   },
   Man_hinh_NBTTTN: {
     screen: NBTTTN,
     navigationOptions: {
-      drawerLabel: "Người bệnh tự theo dõi tại nhà",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="feed" color="blue" size={20} />
-        </View>
-      ),
+      header: null
     }
   },
 
   Man_hinh_CSSKTM: {
     screen: CSSKTM,
     navigationOptions: {
-      drawerLabel: "Chăm sóc sức khỏe trẻ em",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="health" color="green" size={25} />
-        </View>
-      ),
+      header: null
     }
   },
 
   Man_hinh_CSSPNCT: {
     screen: CSSPNCT,
     navigationOptions: {
-      drawerLabel: "Chăm sóc sức khỏe phụ nữ có thai",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="health" color="red" size={25}/>
-        </View>
-      ),
+      header: null
     }
   },
   Logout: {
     screen: Logout,
     navigationOptions: {
-      drawerLabel: "Đăng xuất",
-      drawerIcon: ({ }) => (
-        <View>
-          <Icon name="switch" color="red"size={20} />
-        </View>
-      ),
+      header: null
     }
   }
 
@@ -170,7 +108,7 @@ const drawerNavigatorConfig = {
   },
 };
 
-const Thuc_don_Slider = createDrawerNavigator(routeConfigs, drawerNavigatorConfig);
+const Thuc_don_Slider = createStackNavigator(routeConfigs, drawerNavigatorConfig);
 const App = createAppContainer(Thuc_don_Slider);
 export default App
-   
+

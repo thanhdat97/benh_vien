@@ -41,6 +41,9 @@ export default class INFORAMTION extends Component {
     XL_Chon8() {
         this.props.navigation.navigate("Man_hinh_CSSPNCT")
     }
+    XL_Chon9() {
+        this.props.navigation.navigate("Logout")
+    }
     render() {
 
         return (
@@ -127,6 +130,16 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Chăm sóc sức khỏe phụ nữ có thai
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.XL_Chon9.bind(this)}>
+                                <View style={styles.wrap_thongtinkhamchuabenh}>
+                                    <View style={styles.icon_thongtinkhamchuabenh}>
+                                        <Icon name="switch" color="red" size={20} />
+                                    </View>
+                                    <Text style={styles.text_thongtinkhamchuabenh}>
+                                       Đăng Xuất
                                     </Text>
                                 </View>
                             </TouchableOpacity>

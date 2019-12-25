@@ -57,7 +57,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Thông tin hành chính
-                             </Text>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon2.bind(this)}>
@@ -67,7 +67,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Thông tin sức khỏe cá nhân
-                             </Text>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon3.bind(this)}>
@@ -77,7 +77,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Thông tin sức khỏe gia đình
-                             </Text>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon4.bind(this)}>
@@ -87,7 +87,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Thông tin sức khỏe sinh sản
-                             </Text>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.XL_Chon5.bind(this)}>
@@ -97,7 +97,7 @@ export default class INFORAMTION extends Component {
                                     </View>
                                     <Text style={styles.text_thongtinkhamchuabenh}>
                                         Thông tin khác
-                             </Text>
+                                    </Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
